@@ -26,6 +26,7 @@
     line-height: 1.1;
 }
 .hero-latest-btn{
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,8 +35,11 @@
     height: 70px;
     border-radius: 75px;
     margin-top: -10px;
-    background: red;
-    color: white;
+    background: var(--primary);
+    color: var(--white);
     font-size: 22px;
     font-weight: 500;
+}
+.hero-latest-btn:hover{
+    border: 1px solid var(--black);
 }

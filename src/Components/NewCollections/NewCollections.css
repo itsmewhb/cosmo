@@ -1,26 +1,26 @@
-.popular{
-    background: linear-gradient(180deg, #fdf8ef, #e1ffea22 60%);
+.new-collections{
+    background: linear-gradient(180deg #e1ffea22, #fdf8ef, 60%);
     margin-top: 0;
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 10px;
-    height: 90vh;
+    margin-bottom: 100px;
 }
-.popular h1{
+.new-collections h1{
     color: #171717;
     font-size: 50px;
     font-weight: 600;
 }
-.popular hr{
+.new-collections hr{
     width: 200px;
     height: 6px;
     border-radius: 10px;
     background: #252525;
 }
-.popular-item{
-    margin-top: 20px;
-    display: flex;
+.collections{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 50px;
     gap: 30px;
-    
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import './Hero2.css'
+import './AboutUs.css'
 import hero_icon from '../Assets/hero_icon.png'
 
 export const Hero2 = () => {

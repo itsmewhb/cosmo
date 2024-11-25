@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 export const Navbar = () => {
 
-    const [menu,setMenu]= useState("shop")
+      const [menu,setMenu]= useState("shop")
 
     const applyColorsToCSS = () => {
         const root = document.documentElement;
@@ -20,14 +20,13 @@ export const Navbar = () => {
   return (
     <div className='navbar'> 
         <div className="nav-logo">
-            {/* <img src={logo} alt="" /> */}
-            <p>I-HUB COLLECTION</p>
+            <Link to='/about'style={{ color:'#fdf8ef' }}><p>I-HUB COLLECTION</p></Link>
         </div> 
         <ul className="nav-menu">
-            <li onClick={()=>{setMenu("shop")}}><Link style={{ textDecoration:'none', color: '#ae7d5c'}}to='/'>SHOP</Link> {menu==="shop"?<hr/>:<></>} </li>
-            <li onClick={()=>{setMenu("mens")}}><Link style={{ textDecoration:'none', color: '#ae7d5c'}}to='/mens'>MEN</Link> {menu==="mens"?<hr/>:<></>}</li>
-            <li onClick={()=>{setMenu("womens")}}><Link style={{ textDecoration:'none', color: '#ae7d5c'}}to='/womens'>WOMEN</Link> {menu==="womens"?<hr/>:<></>}</li>
-            <li onClick={()=>{setMenu("kids")}}><Link style={{ textDecoration:'none', color: '#ae7d5c'}}to='/kids'>KIDS</Link> {menu==="kids"?<hr/>:<></>}</li>
+            <li className="navshop" onClick={()=>{setMenu("shop")}}><Link style={{ textDecoration:'none', color: '#ae7d5c'}}to='/'>SHOP</Link> {menu==="shop"?<hr/>:<></>} </li>
+            <li className="navmen" onClick={()=>{setMenu("mens")}}><Link style={{ textDecoration:'none', color: '#ae7d5c'}}to='/mens'>MEN</Link> {menu==="mens"?<hr/>:<></>}</li>
+            <li className="navwomen" onClick={()=>{setMenu("womens")}}><Link style={{ textDecoration:'none', color: '#ae7d5c'}}to='/womens'>WOMEN</Link> {menu==="womens"?<hr/>:<></>}</li>
+            <li className="navkid" onClick={()=>{setMenu("kids")}}><Link style={{ textDecoration:'none', color: '#ae7d5c'}}to='/kids'>KIDS</Link> {menu==="kids"?<hr/>:<></>}</li>
         </ul>
         <div className="nav-login-cart">
             <Link to='/login'><button>LOGIN</button></Link>

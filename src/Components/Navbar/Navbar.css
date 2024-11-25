@@ -14,7 +14,12 @@
     font-size: 38px;
     font-weight: 600;
     font-family: "maragsa";
-    color: 'none';
+    text-decoration: none;
+    cursor: pointer;
+}
+.nav-logo p:hover {
+    text-decoration: underline;
+    transform: skew(-15deg);
 }
 .nav-menu{
     display: flex;
@@ -37,6 +42,18 @@
     cursor: pointer;
     color: var(--light_primary);    
 }
+.navshop:hover{
+    transform: scale(1.2)
+}
+.navmen:hover{
+    transform: scale(1.2)
+}
+.navwomen:hover{
+    transform: scale(1.2)
+}
+.navkid:hover{
+    transform: scale(1.3)
+}
 .nav-menu hr {
         border: none;
         width: 80%;
@@ -48,7 +65,13 @@
     display: flex;
     align-items: center;
     gap: 45px;
-
+}
+.nav-login-cart button:hover{
+    border: 1px solid var(--primary);
+    box-shadow: 0 0 5px var(--primary);
+}
+.nav-login-cart img:hover{
+  transform: rotate(45deg);
 }
 .nav-login-cart button {
     width: 157px;
@@ -78,5 +101,4 @@
     font-size: 14px;
     background: red;
     color: var(--white);
-
 }
