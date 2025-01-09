@@ -36,27 +36,26 @@
     display: inline-block;
     transition: transform 0.3s ease-in-out;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}.nav-logo span:hover {
+    animation: elegantHover 0.6s ease-in-out;
 }
 
-.nav-logo span:hover {
-    animation: jumpTilt 0.5s ease-in-out;
-}
-
-/* Jump tilt animation */
-@keyframes jumpTilt {
+/* Elegant hover animation */
+@keyframes elegantHover {
     0% {
-        transform: translateY(0) rotate(0deg);
+        transform: scale(1) rotate(0deg);
+        color: var(--white);
     }
-    30% {
-        transform: translateY(-10px) rotate(-15deg);
-    }
-    70% {
-        transform: translateY(-10px) rotate(15deg);
+    50% {
+        transform: scale(1.1) rotate(5deg);  /* Slight scale and gentle rotation */
+        color: var(--primary);  /* Subtle color change for emphasis */
     }
     100% {
-        transform: translateY(0) rotate(0deg);
+        transform: scale(1) rotate(0deg);
+        color: var(--white);  /* Return to original color */
     }
 }
+
 
 /* Navbar menu */
 .nav-menu {
@@ -197,13 +196,16 @@
 
 @media (max-width: 768px) {
     .navbar {
+        justify-content: center;
         padding: 15px 20px;
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
     }
 
     .nav-menu {
-        flex-direction: column;
+        flex-direction: row;
+        margin-top: 10px;
         gap: 15px;
         align-items: flex-start;
         font-size: 18px;
@@ -222,24 +224,60 @@
         font-size: 16px;
     }
 }
-
+/* Responsive Design for 480px or smaller */
 @media (max-width: 480px) {
     .navbar {
-        padding: 15px 10px;
+        padding: 10px;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+        gap: 10px;
+    }
+
+    .nav-logo {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
 
     .nav-menu {
-        gap: 10px;
-        font-size: 14px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center; /* Center menu items */
+        gap: 8px;
+        width: 100%;
+        margin-top: 10px;
     }
 
-    .nav-logo span {
-        font-size: 18px;
+    .navlogo-menu{
+        display: flex;
+        flex-direction: column;
     }
-
     .nav-login-cart {
-        gap: 15px;
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .nav-menu li {
+        font-size: 12px; /* Adjust font size for mobile */
+    }
+
+    .nav-login-cart button {
+        width: 100px; /* Adjust button width */
+        height: 35px;
+        font-size: 12px;
+    }
+
+    .nav-login-cart img {
+        height: 45px;
+        width: 35px;
+    }
+
+    .nav-cart-count {  
+        margin-left:-35px;
+        width: 18px;
+        height: 18px;
+        font-size: 10px;
     }
 }

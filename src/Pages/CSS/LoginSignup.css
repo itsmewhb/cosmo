@@ -11,8 +11,9 @@
 }
 
 .loginsignup-container {
-    width: 580px;
-    height: 550px;
+    width: 100%; /* Make it responsive */
+    max-width: 580px; /* Keep a max width for larger screens */
+    height: auto; /* Allow height to adjust */
     margin: auto;
     padding: 0px 60px;
     text-shadow: 2px 2px 5px var(--black);
@@ -120,12 +121,12 @@
     .loginsignup {
         height: auto; /* Allow height to adjust on mobile */
         padding-top: 40px;
-        padding-bottom: 60px;
+        padding-bottom:160px;
     }
     .loginsignup-container {
-        width: 100%;
+        width:auto;
         padding-top: 40px;
-        padding-bottom: 60px;
+        padding-bottom:  30px;
     }
     .loginsignup-container button {
         font-size: 16px;

@@ -26,4 +26,7 @@
 .item:hover{
     transform: scale(1.05);
     transition: 0.06s;
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3); /* Base shadow */
+    animation: movingShadow 3s linear infinite, imgScale 3s ease-in-out infinite;
+
 }

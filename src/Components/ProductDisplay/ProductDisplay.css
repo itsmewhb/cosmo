@@ -180,7 +180,10 @@
     .productdisplay-right-sizes div {
         padding: 12px 18px; /* Adjust padding for smaller sizes */
     }
-
+    
+    .productdisplay-right {
+        align-items: center
+    }
     .productdisplay-right button {
         width: 120px;
         padding: 12px 20px; /* Adjust button size for mobile */
