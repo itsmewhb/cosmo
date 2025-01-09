@@ -12,19 +12,8 @@ export const Hero = () => {
                 <h1>
                   <span>I</span>
                   <span>-</span>
-                  <span>H</span>
-                  <span>U</span>
-                  <span>B</span>
-                  <span>C</span>
-                  <span>O</span>
-                  <span>L</span>
-                  <span>L</span>
-                  <span>E</span>
-                  <span>C</span>
-                  <span>T</span>
-                  <span>I</span>
-                  <span>O</span>
-                  <span>N</span>
+                  <span>HUB</span>
+                  <span>COLLECTION</span>
                 </h1>
               </div>
             </div>
