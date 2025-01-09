@@ -1,6 +1,10 @@
+
 .new-collections{
-    background: linear-gradient(180deg #e1ffea22, #fdf8ef, 60%);
-    margin-top: 0;
+    background: linear-gradient(90deg, var(--brown), var(--secondary), var(--accent));
+    background-size: 300% 300%; /* Ensure smooth gradient movement */
+    animation: gradientMove 6s ease-in-out infinite, pulse 3s linear infinite;
+    transition: background-color 0.3s ease-in-out;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Adds depth to the text */
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -8,7 +12,7 @@
     margin-bottom: 100px;
 }
 .new-collections h1{
-    color: #171717;
+    color: var(--white);
     font-size: 50px;
     font-weight: 600;
 }
@@ -16,11 +20,14 @@
     width: 200px;
     height: 6px;
     border-radius: 10px;
-    background: #252525;
+    background: var(--white);
 }
 .collections{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     margin-top: 50px;
     gap: 30px;
+    margin-bottom: 100px;
 }

@@ -14,10 +14,6 @@
     height: 70px;
     border: 1px solid var(--primary);
 }
-.descriptionbox-nav-box.fade{
-    background: #FBFBFB;
-    color: gray;
-}
 .descriptionbox-description{
     display: flex;
     flex-direction: column;

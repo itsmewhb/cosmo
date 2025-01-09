@@ -1,31 +1,38 @@
 import React from 'react'
 import './Hero.css'
-import text_icon from '../Assets/text_icon.png'
 import arrow_icon from '../Assets/arrow.png'
-import hero_image from '../Assets/hero_image.png'
 
 export const Hero = () => {
-  return (
-    
-    <div className='hero'>
-    <div className="hero-center">
-    <div className="hero-header">
-            <h1>
-            <img src={hero_image} alt="" />
-            </h1>
-            <h2></h2>
-        </div>
-        <div>
-            <div className="hero-text-icon">
-                <img src={text_icon} alt="" />
+    return (
+        <div className="hero">
+          <div className="hero-center">
+            <div className="hero-header"></div>
+            <div>
+              <div className="hero-text-icon">
+                <h1>
+                  <span>I</span>
+                  <span>-</span>
+                  <span>H</span>
+                  <span>U</span>
+                  <span>B</span>
+                  <span>C</span>
+                  <span>O</span>
+                  <span>L</span>
+                  <span>L</span>
+                  <span>E</span>
+                  <span>C</span>
+                  <span>T</span>
+                  <span>I</span>
+                  <span>O</span>
+                  <span>N</span>
+                </h1>
+              </div>
             </div>
+            <div className="hero-latest-btn">
+              <div>Latest Collection</div>
+              <img src={arrow_icon} alt="Arrow Icon" />
+            </div>
+          </div>
         </div>
-        <div className="hero-latest-btn">
-            <div>Latest Collection</div>
-            <img src={arrow_icon} alt="" />
-        </div>
-       </div>
-        
-    </div>
-  )
+      );
 }

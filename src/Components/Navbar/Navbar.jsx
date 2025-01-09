@@ -1,35 +1,35 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import './Navbar.css'
 import color from '../../constants/color.ts'
-import cart_icon from '../Assets/cart_icon.png'
+import cart_icon from '../Assets/cart_icon1.png'
 import { Link } from 'react-router-dom'
+import nav_dropdown from "../Assets/nav_dropdown.png";
 
 export const Navbar = () => {
 
       const [menu,setMenu]= useState("shop")
+      const menuRef = useRef();
 
-    const applyColorsToCSS = () => {
-        const root = document.documentElement;
-        Object.entries(color).forEach(([key, value]) => {
-          root.style.setProperty(`--${key}`, value);
-        });
-      };
       
-      applyColorsToCSS();
 
   return (
     <div className='navbar'> 
         <div className="nav-logo">
-            <Link to='/about'style={{ color:'#fdf8ef' }}><p>I-HUB COLLECTION</p></Link>
+            <Link to='/'style={{textDecoration:'none'}}>
+            <span>I</span><span>-</span><span>HUB</span>
+              <span>COLLECTION</span>
+            </Link>
         </div> 
-        <ul className="nav-menu">
-            <li className="navshop" onClick={()=>{setMenu("shop")}}><Link style={{ textDecoration:'none', color: '#ae7d5c'}}to='/'>SHOP</Link> {menu==="shop"?<hr/>:<></>} </li>
-            <li className="navmen" onClick={()=>{setMenu("mens")}}><Link style={{ textDecoration:'none', color: '#ae7d5c'}}to='/mens'>MEN</Link> {menu==="mens"?<hr/>:<></>}</li>
-            <li className="navwomen" onClick={()=>{setMenu("womens")}}><Link style={{ textDecoration:'none', color: '#ae7d5c'}}to='/womens'>WOMEN</Link> {menu==="womens"?<hr/>:<></>}</li>
-            <li className="navkid" onClick={()=>{setMenu("kids")}}><Link style={{ textDecoration:'none', color: '#ae7d5c'}}to='/kids'>KIDS</Link> {menu==="kids"?<hr/>:<></>}</li>
+        <ul ref={menuRef} className="nav-menu">
+            <li className="navshop" onClick={()=>{setMenu("shop")}}><Link style={{ textDecoration:'none', color: color.white }}to='/'>SHOP</Link> {menu==="shop"?<hr/>:<></>} </li>
+            <li className="navmen" onClick={()=>{setMenu("mens")}}><Link style={{ textDecoration:'none', color: color.white }}to='/mens'>MEN</Link> {menu==="mens"?<hr/>:<></>}</li>
+            <li className="navwomen" onClick={()=>{setMenu("womens")}}><Link style={{ textDecoration:'none', color: color.white }}to='/womens'>WOMEN</Link> {menu==="womens"?<hr/>:<></>}</li>
+            <li className="navkid" onClick={()=>{setMenu("kids")}}><Link style={{ textDecoration:'none', color: color.white }}to='/kids'>KIDS</Link> {menu==="kids"?<hr/>:<></>}</li>
         </ul>
         <div className="nav-login-cart">
-            <Link to='/login'><button>LOGIN</button></Link>
+            <Link to='/login' style={{textDecoration:'none'}}>
+            <button>LOGIN</button>
+            </Link>
             <Link to='/cart'><img src={cart_icon} alt="" /></Link>
             <div className="nav-cart-count">0</div>
         </div>

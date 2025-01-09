@@ -1,26 +1,84 @@
-.popular{
-    background: linear-gradient(180deg, #fdf8ef, #e1ffea22 60%);
-    margin-top: 0;
+
+/* Popular Section */
+.popular {
     display: flex;
-    align-items: center;
+    margin: auto;
+    background: linear-gradient(90deg, var(--brown), var(--secondary), var(--accent));
+    background-size: 300% 300%; /* Ensure smooth gradient movement */
+    animation: gradientMove 6s ease-in-out infinite, pulse 3s linear infinite;
+    transition: background-color 0.3s ease-in-out;
+    display: flex; 
     flex-direction: column;
-    gap: 10px;
-    height: 90vh;
+    align-items: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Adds depth to the text */   
 }
-.popular h1{
-    color: #171717;
+
+/* Animation for gradient movement */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Animation for fade-in */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.popular h1 {
+    color: var(--white);
     font-size: 50px;
     font-weight: 600;
+    animation: fadeIn 1.5s ease-out forwards;
 }
-.popular hr{
+
+.popular hr {
     width: 200px;
     height: 6px;
     border-radius: 10px;
-    background: #252525;
+    background: var(--white);
+    animation: fadeIn 2s ease-out forwards;
 }
-.popular-item{
+
+.popular-item {
     margin-top: 20px;
     display: flex;
-    gap: 30px;
-    
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    animation: fadeIn 2s ease-out forwards;
+    margin-bottom: 220px;
+}
+
+/* Fade-in effect on scroll for individual items */
+.popular-item.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+
+@media(max-width: 800px){
+    .popular h1{
+        font-size: 30px;
+    }
+    .popular hr{
+        width: 80px;
+        height: 4px;
+        
+    }
 }

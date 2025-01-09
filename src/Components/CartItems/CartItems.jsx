@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import './CartItems.css'
 import { ShopContext } from '../../Context/ShopContext'
-import remove_icon from '../Assets/cart_cross_icon.png'
+import remove_icon from '../Assets/remove_icon1.png'
 
 const CartItems = () => {
     
@@ -26,7 +26,7 @@ const CartItems = () => {
                                 <img src={e.image} alt="" className='carticon-product-icon' />
                                 <p>{e.name}</p>
                                 <p>₱{e.new_price}</p>
-                                <button className='cartitems-quantity'>{cartItems[e.id]}</button>
+                                <p className='cartitems-quantity'>{cartItems[e.id]}</p>
                                 <p>₱{e.new_price*cartItems[e.id]}</p>
                                 <img className='cartitems-remove-icon' src={remove_icon} onClick={()=>{removeFromCart(e.id)}} alt="" />
                             </div>
@@ -55,13 +55,6 @@ const CartItems = () => {
                     </div>
                 </div>
                 <button>PROCEED TO CHECKOUT</button>
-            </div>
-            <div className="cartitems-promocode">
-                <p>If you have a promo code, Enter it here</p>
-                <div className="cartitems-promobox">
-                     <input type="text" placeholder='promo code' />
-                     <button>Submit</button>
-                </div>
             </div>
         </div>
     </div>
