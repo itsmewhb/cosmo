@@ -1,4 +1,4 @@
-.footer{
+.footer {
     background: linear-gradient(90deg, var(--brown), var(--secondary), var(--accent));
     background-size: 300% 300%; /* Ensure smooth gradient movement */
     animation: gradientMove 6s ease-in-out infinite, pulse 3s linear infinite;
@@ -12,39 +12,46 @@
     padding-top: 75px;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Adds depth to the text */
 }
-.footer-logo{
+
+.footer-logo {
     display: flex;
     align-items: center;
     gap: 20px;
 }
-.footer-logo p{ 
+
+.footer-logo p {
     color: var(--primary);
     font-size: 38px;
     font-weight: 600;
     font-family: "maragsa";
     text-decoration: none;
 }
-.footer-links{
+
+.footer-links {
     display: flex;
     list-style: none;
     gap: 50px;
     color: var(--white);
     font-size: 20px;
 }
-.footer-links li{
+
+.footer-links li {
     cursor: pointer;
 }
-.footer-socials-icons{
+
+.footer-socials-icons {
     display: flex;
     gap: 20px;
 }
-.footer-icons-container{
+
+.footer-icons-container {
     padding: 10px;
     padding-bottom: 6px;
     background: #fbfbfb;
     border: 1px solid #ebebeb;
 }
-.footer-copyright{
+
+.footer-copyright {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,17 +61,65 @@
     color: var(--white);
     font-size: 20px;
 }
-.footer-copyright hr{
+
+.footer-copyright hr {
     width: 80%;
     border: none;
     border-radius: 10px;
     height: 3px;
-    background: var(--white);
+    background: var(--primary); /* Updated background to primary color */
 }
-.footer-copyright hr{
-    width: 80%;
-    border: none;
-    border-radius: 10px;
-    height: 3px;
-    background: var(--primary);
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .footer {
+        padding-top: 50px;
+        gap: 40px;
+    }
+    .footer-logo p {
+        font-size: 30px;
+    }
+    .footer-links {
+        gap: 30px;
+        font-size: 18px;
+    }
+    .footer-copyright {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding-top: 40px;
+        gap: 30px;
+    }
+    .footer-logo p {
+        font-size: 24px;
+    }
+    .footer-links {
+        gap: 20px;
+        font-size: 16px;
+    }
+    .footer-copyright {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer {
+        padding-top: 30px;
+        gap: 20px;
+    }
+    .footer-logo p {
+        font-size: 20px;
+    }
+    .footer-links {
+        gap: 10px;
+        font-size: 14px;
+        flex-direction: column; /* Stack links vertically */
+        align-items: center;
+    }
+    .footer-copyright {
+        font-size: 14px;
+    }
 }
