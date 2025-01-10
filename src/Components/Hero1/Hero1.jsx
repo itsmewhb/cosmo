@@ -35,7 +35,7 @@ export const Hero1 = () => {
           <div className="hero1-text">
             <p className="fade-in">JUST IN</p>
             <p style={{ fontSize: "4.5rem", fontWeight: "bold" }} className="fade-in">NOTHING BEATS THE CITY</p>
-            <p className="fade-in">Built to overcome anything the city throws your way.</p>
+            <p className="fade-in bottom">Built to overcome anything the city throws your way.</p>
           </div>
         </div>
       </div>
