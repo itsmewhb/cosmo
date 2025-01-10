@@ -15,6 +15,7 @@ export const Hero = () => {
                   <span>H</span>
                   <span>U</span>
                   <span>B</span>
+                  <h1>
                   <span>C</span>
                   <span>O</span>
                   <span>L</span>
@@ -25,6 +26,7 @@ export const Hero = () => {
                   <span>I</span>
                   <span>O</span>
                   <span>N</span>
+                  </h1>
                 </h1>
               </div>
             </div>

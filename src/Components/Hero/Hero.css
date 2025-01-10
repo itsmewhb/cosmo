@@ -18,6 +18,16 @@
   object-fit: cover;
   align-items: center;
   margin-top: 0px;
+}.hero-text-icon {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center;    /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  text-align: center;     /* Center-align the text */
+}
+
+.hero-text-icon h1 {
+  margin: 0; /* Remove default margin for precise centering */
 }
 
 .hero-text-icon h1 span {
