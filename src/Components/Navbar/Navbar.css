@@ -228,9 +228,11 @@
 @media (max-width: 480px) {
     .navbar {
         padding: 10px;
-        flex-direction: column; /* Stack items vertically */
         align-items: center;
         gap: 10px;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
     }
 
     .nav-logo {
@@ -245,6 +247,7 @@
         gap: 8px;
         width: 100%;
         margin-top: 10px;
+        font-size: 10px;
     }
 
     .navlogo-menu{
