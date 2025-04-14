@@ -1,18 +1,22 @@
+
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 1px 3px -2px black;
     padding: 15px 70px;
-    background: linear-gradient(180deg, #8B4513, #DEB887);
+    background: linear-gradient(180deg, #e477a0, #06f);
 }
 
 .navbar:hover {
-    background: linear-gradient(90deg, #8B4513, #D2B48C, #DEB887);
+    background: linear-gradient(90deg, #06f, #e477a0, #ff0180);
     background-size: 300% 300%;
     animation: gradientMove 6s ease infinite;
     transition: background-color 0.3s ease-in-out;
 }
+
+
 /* Keyframe for gradient movement */
 @keyframes gradientMove {
     0% {

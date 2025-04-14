@@ -15,7 +15,7 @@ export const Navbar = () => {
   return (
     <div className='navbar'> 
         <div className="nav-logo">
-              <span>I-HUB COLLECTION</span>
+              <span>COSMO</span>
         </div> 
         <ul ref={menuRef} className="nav-menu">
             <li className="navshop" onClick={()=>{setMenu("shop")}}><Link style={{ textDecoration:'none', color: color.white }}to='/'>SHOP</Link> {menu==="shop"?<hr/>:<></>} </li>
