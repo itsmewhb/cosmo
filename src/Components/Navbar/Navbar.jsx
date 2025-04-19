@@ -15,17 +15,17 @@ export const Navbar = () => {
   return (
     <div className='navbar'> 
         <div className="nav-logo">
-              <span>COSMO</span>
+              <span>FLOWER KNOWS</span>
         </div> 
         <ul ref={menuRef} className="nav-menu">
-            <li className="navshop" onClick={()=>{setMenu("shop")}}><Link style={{ textDecoration:'none', color: color.white }}to='/'>SHOP</Link> {menu==="shop"?<hr/>:<></>} </li>
-            <li className="navmen" onClick={()=>{setMenu("mens")}}><Link style={{ textDecoration:'none', color: color.white }}to='/mens'>MEN</Link> {menu==="mens"?<hr/>:<></>}</li>
-            <li className="navwomen" onClick={()=>{setMenu("womens")}}><Link style={{ textDecoration:'none', color: color.white }}to='/womens'>WOMEN</Link> {menu==="womens"?<hr/>:<></>}</li>
-            <li className="navkid" onClick={()=>{setMenu("kids")}}><Link style={{ textDecoration:'none', color: color.white }}to='/kids'>KIDS</Link> {menu==="kids"?<hr/>:<></>}</li>
+            <li className="navshop" onClick={()=>{setMenu("shop")}}><Link style={{ textDecoration:'none', color: color.white }}to='/'>HOME</Link> {menu==="shop"?<hr/>:<></>} </li>
+            <li className="navmakeup" onClick={()=>{setMenu("makeup")}}><Link style={{ textDecoration:'none', color: color.white }}to='/face'>FACE</Link> {menu==="makeup"?<hr/>:<></>}</li>
+            <li className="navaccessories" onClick={()=>{setMenu("accessories")}}><Link style={{ textDecoration:'none', color: color.white }}to='eyes'>EYES</Link> {menu==="accessories"?<hr/>:<></>}</li>
+            <li className="navcollections" onClick={()=>{setMenu("collections")}}><Link style={{ textDecoration:'none', color: color.white }}to='/kids'>LIPS</Link> {menu==="collections"?<hr/>:<></>}</li>
         </ul>
         <div className="nav-login-cart">
             <Link to='/login' style={{textDecoration:'none'}}>
-            <button>LOGIN</button>
+            <button>SIGN UP</button>
             </Link>
             <Link to='/cart'><img src={cart_icon} alt="" /></Link>
             <div className="nav-cart-count">0</div>

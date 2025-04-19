@@ -8,7 +8,7 @@ export const Footer = () => {
   return (
     <div className="footer">
         <div className="footer-logo">
-            <p>I-HUB COLLECTION</p>
+            <p>COSMO</p>
         </div>
         <ul className="footer-links">
             <li>Company</li>
@@ -30,7 +30,7 @@ export const Footer = () => {
         </div>
         <div className="footer-copyright">
             <hr />
-            <p>Copyright @ 2024 - All Rights Reserved.</p>
+            <p>Copyright @ 2025 - All Rights Reserved.</p>
         </div>
     </div>
   )

@@ -3,14 +3,14 @@
 .popular {
     display: flex;
     margin: auto;
-    background: linear-gradient(90deg, var(--brown), var(--secondary), var(--accent));
+    background: linear-gradient(-45deg, #FFe5ec, #Ffcbd8, #FF8FAB, #fc94ae);
     background-size: 300% 300%; /* Ensure smooth gradient movement */
     animation: gradientMove 6s ease-in-out infinite, pulse 3s linear infinite;
     transition: background-color 0.3s ease-in-out;
     display: flex; 
     flex-direction: column;
     align-items: center;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Adds depth to the text */   
+    text-shadow: 2px 2px 5px rgba(179, 75, 165, 0.7); /* Adds depth to the text */   
 }
 
 /* Animation for gradient movement */

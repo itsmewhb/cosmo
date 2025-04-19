@@ -6,11 +6,11 @@
     align-items: center;
     box-shadow: 0 1px 3px -2px black;
     padding: 15px 70px;
-    background: linear-gradient(180deg, #e477a0, #06f);
+    background: linear-gradient(180deg, #fbeef2, rgb(238, 236, 237));
 }
 
 .navbar:hover {
-    background: linear-gradient(90deg, #06f, #e477a0, #ff0180);
+    background: linear-gradient(90deg, rgb(234, 221, 233), #e6d8dd, #f5e4ec);
     background-size: 300% 300%;
     animation: gradientMove 6s ease infinite;
     transition: background-color 0.3s ease-in-out;
@@ -39,7 +39,7 @@
     cursor: pointer;
     display: inline-block;
     transition: transform 0.3s ease-in-out;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    text-shadow: 2px 2px 5px rgba(23, 4, 4, 0.7);
 }.nav-logo span:hover {
     animation: elegantHover 0.6s ease-in-out;
 }
@@ -85,7 +85,7 @@
     cursor: pointer;
     position: relative;
     transition: color 0.3s ease-in-out;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    text-shadow: 2px 2px 5px rgba(192, 23, 23, 0.7);
 }
 
 .nav-menu li::after {
@@ -96,7 +96,7 @@
     position: absolute;
     bottom: -5px;
     left: 0;
-    transition: width 0.3s ease-in-out;
+    transition: width 0.5s ease-in-out;
 }
 
 .nav-menu li:hover {
@@ -129,25 +129,25 @@
 .nav-login-cart button {
     width: 150px;
     height: 50px;
-    border: 1px solid var(--white);
-    background-color: var(--primary);
+    border: 1px solid #FB6F92;
+    background-color: #FB6F92;
     box-shadow: 0 0 5px var(--primary);
     border-radius: 50px;
     color: var(--white);
     font-size: 18px;
     font-weight: bold;
     font-family: "Roboto";
-    background: var(--secondary);
+    background: #FFD8E2;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     transform: scale(1);
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    text-shadow: 2px 2px 5px rgba(15, 6, 6, 0.7);
 }
 
 .nav-login-cart button:hover {
-    border: 1px solid var(--white);
+    border: 1px solid #FFCBD8;
     box-shadow: 0 0 5px var(--primary);
-    background-color: var(--secondary);
+    background-color: #FFCBD8;
     transform: scale(1.1);
 }
 
@@ -175,7 +175,7 @@
     margin-left: -45px;
     border-radius: 11px;
     font-size: 14px;
-    background: var(--red);
+    background: #FB6F92;
     color: var(--white);
 }
 

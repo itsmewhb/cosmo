@@ -1,5 +1,5 @@
 .footer {
-    background: linear-gradient(360deg,var(--brown), var(--secondary), var(--accent));
+    background: linear-gradient(360deg,var(--light_primary), var(--accent), var(--pink));
     margin-top: -100px;
     display: flex;
     flex-direction: column;
@@ -11,7 +11,7 @@
 }
 .footer:hover{
     
-    background: linear-gradient(90deg, #8B4513, #D2B48C, #DEB887);
+    background: linear-gradient(90deg, #ffd8e2, #d09ba9,#c6919f);
     background-size: 300% 300%;
     animation: gradientMove 6s ease infinite;
     transition: background-color 0.3s ease-in-out;
@@ -51,8 +51,8 @@
 .footer-icons-container {
     padding: 10px;
     padding-bottom: 6px;
-    background: #fbfbfb;
-    border: 1px solid #ebebeb;
+    background: #ffff;
+    border: 1px solid #ffd8e2;
 }
 
 .footer-copyright {
