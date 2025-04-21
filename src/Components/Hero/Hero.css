@@ -2,15 +2,34 @@
 
 
 .hero {
+  
   min-height: 90vh;
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: space-between;
-  background-image: url('../Assets/BGWALLPAPER.gif');
+  background-image: url('../Assets/fbg.webp');
+  background-image: url('../Assets/flowerrbg.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
+.slider {
+  width: 100%;
+  max-width: 1000px;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+  margin: auto;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+
 
 .hero-header img {
   width: 100%;

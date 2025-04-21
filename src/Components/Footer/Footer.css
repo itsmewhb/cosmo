@@ -7,11 +7,11 @@
     align-items: center;
     gap: 50px;
     padding-top:125px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Adds depth to the text */
+    text-shadow: 2px 2px 5px rgba(72, 0, 48, 0.937); /* Adds depth to the text */
 }
 .footer:hover{
     
-    background: linear-gradient(90deg, #ffd8e2, #d09ba9,#c6919f);
+    background: linear-gradient(90deg, #ffd8e2, #d09ba9,#a32043);
     background-size: 300% 300%;
     animation: gradientMove 6s ease infinite;
     transition: background-color 0.3s ease-in-out;
@@ -24,7 +24,7 @@
 }
 
 .footer-logo p {
-    color: var(--primary);
+    color: #a32043;
     font-size: 38px;
     font-weight: 600;
     font-family: "maragsa";

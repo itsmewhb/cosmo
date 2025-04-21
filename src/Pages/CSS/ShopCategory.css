@@ -2,11 +2,11 @@
     --primary: #ff6347;
     --white: #ffffff;
     --gray: #A9A9A9;
-    --brown: #5C4033;
-    --secondary: #D2B48C;
+    --brown: #710117;
+    --secondary: #944547;
     --light_primary: #FAEBD7;
     --black: #2F2F2F;
-    --accent: #DEB887;
+    --accent: #f75c7b;
     --blue: #0000FF;
     --red: #FF0000;
 }
@@ -64,7 +64,7 @@
     width: 233px;
     height: 69px;
     border-radius: 75px;
-    background: var(--primary);
+    background: var(--secondary );
     color: var(--white);
     font-size: 22px;
     font-weight: 500;

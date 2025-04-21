@@ -2,7 +2,7 @@
 .item{
     width: 350px;
     color: var(--white);
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Adds depth to the text */
+    text-shadow: 2px 2px 5px rgba(223, 137, 164, 0.7); /* Adds depth to the text */
 }
 .item p{
     margin: 6px 0px;

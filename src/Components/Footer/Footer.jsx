@@ -8,7 +8,7 @@ export const Footer = () => {
   return (
     <div className="footer">
         <div className="footer-logo">
-            <p>COSMO</p>
+            <p>FLOWER KNOWS</p>
         </div>
         <ul className="footer-links">
             <li>Company</li>
