@@ -52,6 +52,7 @@ const CartItems = () => {
                     <div className="cartitems-total-item">
                         <h3>Total</h3>
                         <h3>₱{0}</h3>
+                        
                     </div>
                 </div>
                 <button>PROCEED TO CHECKOUT</button>

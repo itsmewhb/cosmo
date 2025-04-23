@@ -7,7 +7,7 @@
     align-items: center;
     gap: 50px;
     padding-top:125px;
-    text-shadow: 2px 2px 5px rgba(72, 0, 48, 0.937); /* Adds depth to the text */
+    text-shadow: 2px 2px 5px rgba(81, 6, 56, 0.937); /* Adds depth to the text */
 }
 .footer:hover{
     
@@ -24,7 +24,7 @@
 }
 
 .footer-logo p {
-    color: #a32043;
+    color: #cf224d;
     font-size: 38px;
     font-weight: 600;
     font-family: "maragsa";
@@ -35,7 +35,7 @@
     display: flex;
     list-style: none;
     gap: 50px;
-    color: var(--white);
+    color: var(--pink);
     font-size: 20px;
 }
 
@@ -51,8 +51,8 @@
 .footer-icons-container {
     padding: 10px;
     padding-bottom: 6px;
-    background: #ffff;
-    border: 1px solid #ffd8e2;
+    background: #e46767;
+    border: 1px solid #8a1515;
 }
 
 .footer-copyright {
@@ -71,7 +71,7 @@
     border: none;
     border-radius: 10px;
     height: 3px;
-    background: var(--primary); /* Updated background to primary color */
+    background: var(--pink); /* Updated background to primary color */
 }
 
 /* Responsive Adjustments */

@@ -28,7 +28,7 @@ export const Navbar = () => {
             <button>SIGN UP</button>
             </Link>
             <Link to='/cart'><img src={cart_icon} alt="" /></Link>
-            <div className="nav-cart-count">0</div>
+            <div className="nav-cart-count">1</div>
         </div>
     </div>
   )

@@ -6,14 +6,14 @@
     align-items: center;
     box-shadow: 0 1px 3px -2px black;
     padding: 15px 70px;
-    background: linear-gradient(180deg, #fbeef2, rgb(238, 236, 237));
+    background: linear-gradient(180deg, #ebbac9, rgb(248, 189, 180));
 }
 
 .navbar:hover {
-    background: linear-gradient(90deg, rgb(234, 221, 233), #e6d8dd, #f5e4ec);
+    background: linear-gradient(90deg, #f2aecb, #e6d8dd, #f5e4ec);
     background-size: 300% 300%;
     animation: gradientMove 6s ease infinite;
-    transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.1s ease-in-out;
 }
 
 
@@ -31,7 +31,7 @@
 }
 
 .nav-logo span {
-    color: var(--white);
+    color: #e6829b;
     font-size: 29px;
     font-weight: 600;
     font-family: "maragsa";
@@ -48,15 +48,15 @@
 @keyframes elegantHover {
     0% {
         transform: scale(1) rotate(0deg);
-        color: var(--white);
+        color: maroon;
     }
     50% {
         transform: scale(1.1) rotate(5deg);  /* Slight scale and gentle rotation */
-        color: var(--primary);  /* Subtle color change for emphasis */
+        color: rgb(156, 32, 32);  /* Subtle color change for emphasis */
     }
     100% {
         transform: scale(1) rotate(0deg);
-        color: var(--white);  /* Return to original color */
+        color: maroon;  /* Return to original color */
     }
 }
 
@@ -70,7 +70,7 @@
     font-size: 20px;
     font-weight: 500;
     transition: all 0.3s ease-in-out;
-    color: var(--white);
+    color: maroon;
 }
 
 /* Individual menu items */
@@ -92,7 +92,7 @@
     content: "";
     width: 0;
     height: 2px;
-    background: var(--primary);
+    background: #9a1536;
     position: absolute;
     bottom: -5px;
     left: 0;
@@ -116,7 +116,7 @@
     width: 80%;
     height: 3px;
     border-radius: 10px;
-    background: var(--primary);
+    background: rgb(162, 7, 7);
 }
 
 /* Login and cart section */
@@ -145,9 +145,9 @@
 }
 
 .nav-login-cart button:hover {
-    border: 1px solid #FFCBD8;
+    border: 1px solid #e22655;
     box-shadow: 0 0 5px var(--primary);
-    background-color: #FFCBD8;
+    background-color: #510417;
     transform: scale(1.1);
 }
 

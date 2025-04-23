@@ -14,14 +14,14 @@
     font-weight: 600;
     width: 171px;
     height: 70px;
-    border: 1px solid var(--primary);
+    border: 1px solid var(--accent);
 }
 
 .descriptionbox-description {
     display: flex;
     flex-direction: column;
     gap: 25px;
-    border: 1px solid var(--primary);
+    border: 1px solid var(--accent);
     padding: 48px;
     padding-bottom: 70px;
 }
