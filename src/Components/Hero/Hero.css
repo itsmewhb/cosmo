@@ -14,22 +14,6 @@
   background-position: center;
   background-repeat: no-repeat;
 }
-.slider {
-  width: 100%;
-  max-width: 1000px;
-  height: 400px;
-  overflow: hidden;
-  position: relative;
-  margin: auto;
-}
-
-.slide {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: none;
-}
-
 
 .hero-header img {
   width: 100%;
@@ -37,6 +21,7 @@
   object-fit: cover;
   align-items: center;
   margin-top: 0px;
+  
 }.hero-text-icon {
   display: flex;
   flex-direction: column; /* Stack items vertically */
@@ -184,7 +169,7 @@
 }
 
 /* Responsive Design */
-@media (max-width: 100px) {
+@media (max-width: 1200px) {
   .hero {
     padding: 10px 6%;
   }

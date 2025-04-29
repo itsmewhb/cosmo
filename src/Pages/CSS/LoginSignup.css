@@ -1,25 +1,37 @@
 .loginsignup {
-    background: linear-gradient(90deg, #a10d32, #720e28,#a32043);
-    background-size: 300% 300%; /* Ensure smooth gradient movement */
-    animation: gradientMove 6s ease-in-out infinite, pulse 3s linear infinite;
-    transition: background-color 0.3s ease-in-out;
-    color: var(--white);
-    width: 100%;
-    height: 80vh;
-    padding-top: 70px;
-    padding-bottom: 100px;
+    background: ('flowerrr.png');
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: rgb(74, 5, 5);
 }
 
+.frosted-card {
+    width: 300px;
+    padding: 2rem;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
 .loginsignup-container {
-    width: 100%; /* Make it responsive */
-    max-width: 580px; /* Keep a max width for larger screens */
-    height: auto; /* Allow height to adjust */
-    margin: auto;
-    padding: 0px 60px;
-    text-shadow: 2px 2px 5px var(--black);
-    border: 1px solid var(--accent);
-    box-shadow: 5px 5px 10px var(--secondary);
+    position: relative; /* Stay on top of frosted layer */
+    z-index: 1;
+    /* Your original loginsignup-container CSS continues */
 }
+
+
 
 .loginsignup-container h1 {
     margin: 20px 0px;
@@ -36,9 +48,9 @@
     height: 62px;
     width: 100%;
     padding-left: 20px;
-    border: 1px solid var(--brown);
+    border: 1px solid rgb(68, 11, 11);
     outline: none;
-    color: var(--brown);
+    color: rgb(68, 11, 11);
     font-size: 18px;
 }
 
@@ -46,9 +58,9 @@
     width: 100%;
     height: 62px;
     color: var(--white);
-    border: 1px solid var(--accent);
+    border: 1px solid rgb(68, 11, 11);
     text-shadow: 2px 2px 5px var(--black);
-    background-color: var(--secondary);
+    background-color: rgb(68, 11, 11);
     margin-top: 30px;
     font-size: 24px;
     font-weight: 500;

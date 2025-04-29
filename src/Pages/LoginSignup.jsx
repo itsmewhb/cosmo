@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './CSS/LoginSignup.css';
+import redbgg from "../Components/Assets/flowerrr.png";
 
 export const LoginSignup = () => {
   const navigate = useNavigate();
@@ -42,7 +43,19 @@ export const LoginSignup = () => {
   };
 
   return (
-    <div className="loginsignup">
+    <div
+      className="loginsignup"
+      style={{
+        backgroundImage: `url(${redbgg})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
       <div className="loginsignup-container">
         <h1>{isLogin ? 'Login' : 'Sign Up'}</h1>
         <form className="loginsignup-fields" onSubmit={handleSubmit}>

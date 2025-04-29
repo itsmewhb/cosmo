@@ -2,7 +2,7 @@
     padding: 100px 170px;
     color: var(--white);
     text-shadow: 2px 2px 5px var(--black);
-    background: linear-gradient(90deg, var(--brown), var(--secondary), var(--accent));
+    background: ('fbg.webp');
     background-size: 300% 300%; /* Ensure smooth gradient movement */
     animation: gradientMove 6s ease-in-out infinite, pulse 3s linear infinite;
     transition: background-color 0.3s ease-in-out;
@@ -10,7 +10,7 @@
 
 .cartitems hr {
     height: 3px;
-    background-color: var(--black); /* Adding a black line divider */
+    background-color: white; /* Adding a white line divider */
     border: 0;
 }
 
@@ -22,7 +22,7 @@
     padding: 20px 0px;
     font-size: 18px;
     font-weight: 600;
-    border-bottom: 2px solid var(--black); /* Line after the product info */
+    border-bottom: 2px solid white; /* Line after the product info */
 }
 
 .cartitems-format-main p {
@@ -61,7 +61,7 @@
     flex-direction: column;
     margin-right: 200px;
     gap: 40px;
-    border-top: 2px solid var(--black); /* Line above the total section */
+    border-top: 2px solid white; /* Line above the total section */
     padding: 20px 0px;
 }
 
@@ -69,7 +69,7 @@
     display: flex;
     justify-content: space-between;
     padding: 15px 0px;
-    border-bottom: 1px solid var(--black); /* Line between each total item */
+    border-bottom: 1px solid white; /* Line between each total item */
 }
 
 .cartitems-total button {
@@ -198,4 +198,24 @@
         font-size: 14px;
         width: 80%;
     }
+    @keyframes throwToCart {
+        0% {
+          transform: scale(1) translateY(0);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(0.6) translateY(-50px) translateX(50px);
+          opacity: 0.8;
+        }
+        100% {
+          transform: scale(0) translateY(-150px) translateX(300px);
+          opacity: 0;
+        }
+      }
+      
+      .throw-animation {
+        animation: throwToCart 0.6s ease-in-out forwards;
+        position: absolute;
+        pointer-events: none; /* Prevent cloned image from interfering */
+      }
 }

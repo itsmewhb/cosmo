@@ -5,7 +5,7 @@
     text-shadow: 2px 2px 5px rgba(223, 137, 164, 0.7); /* Adds depth to the text */
 }
 .item p{
-    margin: 5px 0px;
+    margin: 6px 0px;
 }
 .item-prices{
     display: flex;

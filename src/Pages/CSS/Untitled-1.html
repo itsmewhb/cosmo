@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>FLOWER KNOWS - Sign Up & Login</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: url('sloww.jpg') no-repeat center center fixed;
+        background-size: cover;
+        color: #444;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 99;
+        background: rgba(0, 0, 0, 0.7);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo-image {
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+    }
+
+    .logo-text {
+        font-family: 'Fredericka the Great', cursive;
+        color: white;
+        font-size: 36px;
+    }
+
+    .navigation a {
+        margin: 10px;
+        padding: 10px 20px;
+        background-color: black;
+        color: white;
+        text-decoration: none;
+        border: 2px solid white;
+        border-radius: 6px;
+        font-size: 1em;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .navigation a:hover {
+        background-color: white;
+        color: #162938;
+    }
+
+    .container {
+        width: 400px;
+        margin: 100px auto;
+        padding: 40px;
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 8px;
+        backdrop-filter: blur(8px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-title {
+        font-size: 2em;
+        text-align: center;
+        color: #162938;
+        margin-bottom: 20px;
+    }
+
+    .input-group {
+        margin: 15px 0;
+        position: relative;
+    }
+
+    .input-group input {
+        width: 100%;
+        padding: 10px;
+        padding-left: 40px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .input-group label {
+        position: absolute;
+        top: -20px;
+        left: 40px;
+        color: #444;
+        font-size: 0.9em;
+    }
+
+    .input-group i {
+        position: absolute;
+        top: 12px;
+        left: 10px;
+        font-size: 1.2em;
+        color: #666;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 10px;
+        background-color: #162938;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 1em;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+        background-color: #ffcc00;
+        color: #162938;
+    }
+
+    .links {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .links button {
+        background: none;
+        border: none;
+        color: #162938;
+        font-size: 1em;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    footer {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 15px;
+        text-align: center;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        margin-top: 40px;
+    }
+
+    footer h3, footer p {
+        margin: 5px 0;
+    }
+</style>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logoo.jfif" alt="School Logo" class="logo-image">
+            <div class="logo-text">Taguig National High School</div>
+        </div>
+        <nav class="navigation">
+            <a href="index.php">Home</a>
+            <a href="about.php">About</a>
+ 
+        </nav>
+    </header>
+
+    <div class="container" id="signup" style="display:none;">
+        <h1 class="form-title">Register</h1>
+        <form method="post" action="register.php">
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" name="fName" id="fName" placeholder="First Name" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" name="lName" id="lName" placeholder="Last Name" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="password" id="password" placeholder="Password" required>
+            </div>
+            <input type="submit" class="btn" value="Register" name="signUp">
+        </form>
+        <div class="links">
+            <button id="signInButton">Log In</button>
+        </div>
+    </div>
+
+    <div class="container" id="signIn">
+        <h1 class="form-title">Sign In</h1>
+        <form method="post" action="register.php">
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="password" id="password" placeholder="Password" required>
+            </div>
+            <input type="submit" class="btn" value="Log In" name="signIn">
+        </form>
+        <div class="links">
+            <button id="signUpButton">Register For Your Student Account!</button>
+        </div>
+    </div>
+
+    <footer>
+        <h3>Contact Us</h3>

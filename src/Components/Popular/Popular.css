@@ -72,7 +72,7 @@
 }
 
 
-@media(max-width: 300px){
+@media(max-width: 800px){
     .popular h1{
         font-size: 30px;
     }
