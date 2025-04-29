@@ -10,22 +10,20 @@ export const Footer = () => {
         <div className="footer-logo">
             <p>FLOWER KNOWS</p>
         </div>
-        <ul className="footer-links">
-            <li>Company</li>
-            <li>Products</li>
-            <li>Offices</li>
-            <li>About</li>
-            <li>Contact</li>
+        <ul className="footer-links">     
+            <li><a href="/about">About Us </a></li>
+        
+            
         </ul>
         <div className="footer-socials-icons">
             <div className="footer-icons-container">
-                <img src={instagram_icon} alt="" />
+                <img src={instagram_icon} alt="Instagram" />
             </div>
             <div className="footer-icons-container">
-                <img src={pintester_icon} alt="" />
+                <img src={pintester_icon} alt="Pinterest" />
             </div>
             <div className="footer-icons-container">
-                <img src={whatsapp_icon} alt="" />
+                <img src={whatsapp_icon} alt="WhatsApp" />
             </div>
         </div>
         <div className="footer-copyright">
@@ -35,3 +33,4 @@ export const Footer = () => {
     </div>
   )
 }
+

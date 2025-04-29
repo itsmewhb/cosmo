@@ -184,7 +184,7 @@
 }
 
 /* Responsive Design */
-@media (max-width: 1200px) {
+@media (max-width: 100px) {
   .hero {
     padding: 10px 6%;
   }

@@ -27,7 +27,7 @@
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 100px) {
     .breadcrum {
         flex-direction: column; /* Stack breadcrumb items vertically */
         align-items: flex-start; /* Align items to the left */

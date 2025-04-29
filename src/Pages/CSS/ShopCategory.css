@@ -112,7 +112,7 @@
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 200px) {
     .shopcategory-banner {
         width: 100%;
     }

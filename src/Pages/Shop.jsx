@@ -1,6 +1,5 @@
 import React from 'react'
 import { Hero } from '../Components/Hero/Hero'
-import {Popular} from '../Components/Popular/Popular'
 import { Hero1 } from '../Components/Hero1/Hero1'
 
 
@@ -9,8 +8,7 @@ export const Shop = () => {
     <div className='shop'> 
       <Hero/>
       <Hero1/>
-      {/* <Popular/> */}
-      
+
     </div>
   )
 }

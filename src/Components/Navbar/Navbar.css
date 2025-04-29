@@ -1,5 +1,4 @@
-
-
+/* Navbar styling */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -16,7 +15,6 @@
     transition: background-color 0.1s ease-in-out;
 }
 
-
 /* Keyframe for gradient movement */
 @keyframes gradientMove {
     0% {
@@ -30,8 +28,9 @@
     }
 }
 
+/* Logo styling */
 .nav-logo span {
-    color: #e6829b;
+    color: #811430;
     font-size: 29px;
     font-weight: 600;
     font-family: "maragsa";
@@ -40,7 +39,9 @@
     display: inline-block;
     transition: transform 0.3s ease-in-out;
     text-shadow: 2px 2px 5px rgba(23, 4, 4, 0.7);
-}.nav-logo span:hover {
+}
+
+.nav-logo span:hover {
     animation: elegantHover 0.6s ease-in-out;
 }
 
@@ -60,8 +61,7 @@
     }
 }
 
-
-/* Navbar menu */
+/* Navbar menu styling */
 .nav-menu {
     display: flex;
     align-items: center;
@@ -107,10 +107,12 @@
     width: 100%;
 }
 
+/* Hover effect for shop, menu, women, and kids links */
 .navshop:hover, .navmen:hover, .navwomen:hover, .navkid:hover {
     transform: scale(1.2);
 }
 
+/* Horizontal line style */
 .nav-menu hr {
     border: none;
     width: 80%;
@@ -119,7 +121,7 @@
     background: rgb(162, 7, 7);
 }
 
-/* Login and cart section */
+/* Login and cart section styling */
 .nav-login-cart {
     display: flex;
     align-items: center;
@@ -129,7 +131,7 @@
 .nav-login-cart button {
     width: 150px;
     height: 50px;
-    border: 1px solid #FB6F92;
+    border: 1px solid #c60835;
     background-color: #FB6F92;
     box-shadow: 0 0 5px var(--primary);
     border-radius: 50px;
@@ -137,7 +139,7 @@
     font-size: 18px;
     font-weight: bold;
     font-family: "Roboto";
-    background: #FFD8E2;
+    background: #7c0825;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     transform: scale(1);
@@ -145,13 +147,13 @@
 }
 
 .nav-login-cart button:hover {
-    border: 1px solid #e22655;
+    border: 1px solid #ff6d92;
     box-shadow: 0 0 5px var(--primary);
     background-color: #510417;
     transform: scale(1.1);
 }
 
-.nav-login-cart img:hover, .nav-cart-count:hover{
+.nav-login-cart img:hover, .nav-cart-count:hover {
     transform: scale(1.3);
 }
 
@@ -175,11 +177,41 @@
     margin-left: -45px;
     border-radius: 11px;
     font-size: 14px;
-    background: #FB6F92;
+    background: #700a24;
     color: var(--white);
 }
 
-/* Responsive Design */
+/* About Us button styling */
+.nav-about-us {
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+    color: maroon;
+    text-shadow: 2px 2px 5px rgba(192, 23, 23, 0.7);
+}
+
+.nav-about-us::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background: #9a1536;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.5s ease-in-out;
+}
+
+.nav-about-us:hover {
+    color: var(--primary);
+}
+
+.nav-about-us:hover::after {
+    width: 100%;
+}
+
+/* Media queries for responsiveness */
 @media (max-width: 1024px) {
     .navbar {
         padding: 15px 40px;
@@ -228,6 +260,7 @@
         font-size: 16px;
     }
 }
+
 /* Responsive Design for 480px or smaller */
 @media (max-width: 480px) {
     .navbar {
@@ -254,10 +287,11 @@
         font-size: 10px;
     }
 
-    .navlogo-menu{
+    .navlogo-menu {
         display: flex;
         flex-direction: column;
     }
+
     .nav-login-cart {
         align-items: center;
         flex-direction: row;
@@ -281,8 +315,8 @@
         width: 35px;
     }
 
-    .nav-cart-count {  
-        margin-left:-35px;
+    .nav-cart-count {
+        margin-left: -35px;
         width: 18px;
         height: 18px;
         font-size: 10px;

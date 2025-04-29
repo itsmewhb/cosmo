@@ -1,7 +1,7 @@
 import React from 'react'
-import './DescriptionBox.css'
+import './DescriptionBox.css' //
 
-export const DescriptionBox = () => {
+export const DescriptionBox = () => { 
   return (
     <div className="descriptionbox">
         <div className="descriptionbox-navigator">

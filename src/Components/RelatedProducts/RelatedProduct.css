@@ -31,7 +31,7 @@
 }
 
 /* Media Queries */
-@media (max-width: 992px) {
+@media (max-width: 300px) {
     .relatedproducts h1 {
         font-size: 40px; /* Reduce font size for tablets */
     }
@@ -45,7 +45,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 300px) {
     .relatedproducts h1 {
         font-size: 32px; /* Further reduce font size for smaller tablets */
     }
@@ -59,7 +59,7 @@
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 300px) {
     .relatedproducts h1 {
         font-size: 28px; /* Smallest font size for mobile devices */
     }

@@ -1,5 +1,5 @@
 .loginsignup {
-    background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+    background: linear-gradient(90deg, #a10d32, #720e28,#a32043);
     background-size: 300% 300%; /* Ensure smooth gradient movement */
     animation: gradientMove 6s ease-in-out infinite, pulse 3s linear infinite;
     transition: background-color 0.3s ease-in-out;
