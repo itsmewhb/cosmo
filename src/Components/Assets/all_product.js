@@ -1,24 +1,20 @@
  
-import p1_img from "./eye1.webp";
-import p2_img from "./eye2.webp";
-import p3_img from "./eye3.webp";
-import p4_img from "./eye4.webp";
-import p5_img from "./eye5.webp";
-import p6_img from "./eye6.webp";
-import p7_img from "./eye7.webp";
-import p8_img from "./eye8.webp"; 
-import p13_img from "./face1.webp";
-import p14_img from "./face2.webp";
-import p15_img from "./face3.webp";
-import p16_img from "./face4.webp";
-import p17_img from "./face5.webp";
-import p18_img from "./face6.webp";
-import p19_img from "./face7.webp";
-import p20_img from "./face8.webp";
-import p21_img from "./face9.webp";
-import p22_img from "./face10.webp";
-import p23_img from "./face11.webp";
-import p24_img from "./face12.webp";
+import p1_img from "./FACE1.webp";
+import p2_img from "./FACE2.webp";
+import p3_img from "./FACE3.webp";
+import p4_img from "./FACE4.webp";
+import p5_img from "./FACE5.webp";
+import p6_img from "./FACE6.webp";
+import p7_img from "./FACE7.webp";
+import p8_img from "./FACE8.webp"; 
+import p13_img from "./EYES1.webp";
+import p14_img from "./EYES2.webp";
+import p15_img from "./EYES3.webp";
+import p16_img from "./EYES4.webp";
+import p17_img from "./EYES5.webp";
+import p18_img from "./EYES6.webp";
+import p19_img from "./EYES7.webp";
+import p20_img from "./EYES8.webp";
 import p25_img from "./sanamaliitna (1) (1).jpg";
 import p26_img from "./lips2 (1).webp";
 import p27_img from "./lips3 (1).webp";
@@ -158,38 +154,9 @@ let all_product = [
     new_price: 1125.00,
     old_price: 1145.00,
   },
-  {
-    id: 21,
-    name: "Midsummer Fairytales Liquid Highlighter (Multichrome)",
-    category: "eyes",
-    image: p21_img,
-    new_price: 1555.00,
-    old_price: 1585.00,
-  },
-  {
-    id: 22,
-    name: "Strawberry Cupid Pressed Powder",
-    category: "eyes",
-    image: p22_img,
-    new_price: 1355.00,
-    old_price: 1385.00,
-  },
-  {
-    id: 23,
-    name: "Butterfly Cloud Collar Embossed Highlight & Contour Palette",
-    category: "eyes",
-    image: p23_img,
-    new_price: 1125.00,
-    old_price: 1155.00,
-  },
-  {
-    id: 24,
-    name: "Midsummer Fairytales Velvet Embossed Blush",
-    category: "eyes",
-    image: p24_img,
-    new_price: 1125.00,
-    old_price: 1155.00,
-  },
+ 
+  
+ 
   {
     id: 25,
     name: "Swan Ballet Shine Lipstick",

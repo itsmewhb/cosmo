@@ -1,3 +1,4 @@
+/* Global Styles */
 .cartitems {
     padding: 100px 170px;
     color: var(--white);
@@ -198,24 +199,67 @@
         font-size: 14px;
         width: 80%;
     }
-    @keyframes throwToCart {
-        0% {
-          transform: scale(1) translateY(0);
-          opacity: 1;
-        }
-        50% {
-          transform: scale(0.6) translateY(-50px) translateX(50px);
-          opacity: 0.8;
-        }
-        100% {
-          transform: scale(0) translateY(-150px) translateX(300px);
-          opacity: 0;
-        }
-      }
-      
-      .throw-animation {
-        animation: throwToCart 0.6s ease-in-out forwards;
-        position: absolute;
-        pointer-events: none; /* Prevent cloned image from interfering */
-      }
+}
+
+/* Animation for Throw Effect */
+@keyframes throwToCart {
+    0% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(0.6) translateY(-50px) translateX(50px);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(0) translateY(-150px) translateX(300px);
+        opacity: 0;
+    }
+}
+
+.throw-animation {
+    animation: throwToCart 0.6s ease-in-out forwards;
+    position: absolute;
+    pointer-events: none; /* Prevent cloned image from interfering */
+}
+
+/* Receipt Box Styles */
+.receipt-box {
+    background-color: rgb(147, 37, 37);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.receipt-details {
+    margin-bottom: 20px;
+}
+
+.receipt-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.receipt-total {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+button {
+    padding: 10px;
+    background-color: #00bcd4;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: rgb(75, 3, 3);
 }

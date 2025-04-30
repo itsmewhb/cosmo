@@ -37,16 +37,7 @@ export const ProductDisplay = (props) => {
             <div className="productdisplay-right-price-new">₱{product.new_price}</div>
             </div>
             
-            <div className="productdisplay-right-size">
-                <h1>Select Shade</h1>
-                <div className="productdisplay-right-sizes">
-                    <div>01</div>
-                    <div>02</div>
-                    <div>03</div>
-                    <div>04</div>
-                    <div>05</div>
-                </div>
-            </div>
+            
             <button onClick={()=>{addToCart(product.id)}}>ADD TO CART</button>
             
         </div>

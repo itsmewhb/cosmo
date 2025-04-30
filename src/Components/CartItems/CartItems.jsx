@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./CartItems.css";
 import { ShopContext } from "../../Context/ShopContext";
 import remove_icon from "../Assets/remove_icon1.png";
@@ -7,6 +7,9 @@ import fbg from "../Assets/fbg.webp";
 const CartItems = () => {
   const { all_product, cartItems, addToCart, removeFromCart, getTotalCartQuantity, calculateSubtotal } =
     useContext(ShopContext);
+
+  // State to manage checkout and display receipt
+  const [isCheckedOut, setIsCheckedOut] = useState(false);
 
   // Handle animation when adding an item
   const handleAddToCart = (itemId, event) => {
@@ -36,6 +39,17 @@ const CartItems = () => {
     }
   };
 
+  // Handle checkout
+  // Handle checkout
+const handleCheckout = () => {
+  if (calculateSubtotal() === 0) {
+    alert("Your cart is empty. Please add items before proceeding to checkout.");
+    return;
+  }
+  setIsCheckedOut(true); // Proceed to checkout
+};
+
+
   return (
     <div className="cartitems" style={{ backgroundImage: `url(${fbg})`, backgroundSize: "cover" }}>
       <div className="cartitems-format-main">
@@ -50,8 +64,8 @@ const CartItems = () => {
       {all_product.map((e) => {
         if (cartItems[e.id] > 0) {
           return (
-            <div key={e.id}>
-              <div className="cartitems-format cartitems-format-main">
+            <div key={e.id} className="cartitems-format">
+              <div className="cartitems-format-main">
                 <img
                   src={e.image}
                   alt=""
@@ -75,28 +89,57 @@ const CartItems = () => {
         }
         return null;
       })}
-      <div className="cartitems-down">
-        <div className="cartitems-total">
-          <h1>Cart totals</h1>
-          <div>
-            <div className="cartitems-total-item">
-              <p>Subtotal</p>
-              <p>₱{calculateSubtotal()}</p>
+
+      {/* Cart totals section */}
+      {!isCheckedOut && (
+        <div className="cartitems-down">
+          <div className="cartitems-total">
+            <h1>Cart totals</h1>
+            <div>
+              <div className="cartitems-total-item">
+                <p>Subtotal</p>
+                <p>₱{calculateSubtotal()}</p>
+              </div>
+              <hr />
+              <div className="cartitems-total-item">
+                <p>Shipping Fee</p>
+                <p>Free</p>
+              </div>
+              <hr />
+              <div className="cartitems-total-item">
+                <h3>Total</h3>
+                <h3>₱{calculateSubtotal()}</h3>
+              </div>
             </div>
-            <hr />
-            <div className="cartitems-total-item">
-              <p>Shipping Fee</p>
-              <p>Free</p>
-            </div>
-            <hr />
-            <div className="cartitems-total-item">
-              <h3>Total</h3>
-              <h3>₱{calculateSubtotal()}</h3>
-            </div>
+            <button onClick={handleCheckout}>PROCEED TO CHECKOUT</button>
           </div>
-          <button>PROCEED TO CHECKOUT</button>
         </div>
-      </div>
+      )}
+
+      {/* Receipt Box after Checkout */}
+      {isCheckedOut && (
+        <div className="receipt-box">
+          <h2>Your Receipt:</h2>
+          <div className="receipt-details">
+            {all_product.map((e) => {
+              if (cartItems[e.id] > 0) {
+                return (
+                  <div key={e.id} className="receipt-item">
+                    <p>{e.name} x{cartItems[e.id]}</p>
+                    <p>₱{e.new_price} each</p>
+                    <p>Total: ₱{e.new_price * cartItems[e.id]}</p>
+                  </div>
+                );
+              }
+              return null;
+            })}
+          </div>
+          <div className="receipt-total">
+            <h3>Total Amount: ₱{calculateSubtotal()}</h3>
+            <p>Thank you for shopping with us!</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
