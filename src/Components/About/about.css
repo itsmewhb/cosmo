@@ -1,0 +1,77 @@
+/* Add this to your HTML <head> to import the font */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&display=swap');
+
+.about-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertical centering */
+  align-items: center;     /* Horizontal centering */
+  padding: 3rem 2rem;
+  color: #4b0101;
+  min-height: 100vh;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  box-sizing: border-box;
+  overflow: hidden;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.3); /* fallback for blur */
+}
+
+/* Animated background blur */
+.about-container::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('../Assets/aboutbg.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1.05); /* Avoid edge clipping */
+  z-index: -1;
+  animation: blurPulse 6s ease-in-out infinite;
+}
+
+/* Keyframes for continuous blur effect */
+@keyframes blurPulse {
+  10%, 100% {
+    filter: blur(4px);
+  }
+  50% {
+    filter: blur(8px);
+  }
+}
+
+.about-container h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: #440b0b;
+  text-align: center;
+}
+
+.about-container p {
+  max-width: 800px;
+  font-size: 1.3rem;
+  line-height: 2;
+  font-weight: 600;
+  color: #5a1a1a;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .about-container h1 {
+    font-size: 2.3rem;
+    letter-spacing: 1px;
+  }
+
+  .about-container p {
+    font-size: 1.05rem;
+    padding: 0 1rem;
+  }
+}

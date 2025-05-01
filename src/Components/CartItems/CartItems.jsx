@@ -5,53 +5,54 @@ import remove_icon from "../Assets/remove_icon1.png";
 import fbg from "../Assets/fbg.webp";
 
 const CartItems = () => {
-  const { all_product, cartItems, addToCart, removeFromCart, getTotalCartQuantity, calculateSubtotal } =
-    useContext(ShopContext);
+  const {
+    all_product,
+    cartItems,
+    addToCart,
+    removeFromCart,
+    getTotalCartQuantity,
+    calculateSubtotal,
+  } = useContext(ShopContext);
 
-  // State to manage checkout and display receipt
-  const [isCheckedOut, setIsCheckedOut] = useState(false);
+   const [isCheckedOut, setIsCheckedOut] = useState(false);
 
-  // Handle animation when adding an item
+  // Add to cart with animation
   const handleAddToCart = (itemId, event) => {
-    const targetElement = event.target.closest(".carticon-product-icon"); // Get clicked product image
+    const targetElement = event?.target?.closest(".carticon-product-icon");
 
-    if (targetElement) {
-      console.log("Throw animation applied!", targetElement); // Debugging check
-
-      // Clone the image to animate it separately
+     if (targetElement) {
       const animatedImage = targetElement.cloneNode(true);
-      animatedImage.classList.add("throw-animation"); // Apply animation class
+      animatedImage.classList.add("throw-animation");
 
-      // Append cloned image to body
-      document.body.appendChild(animatedImage);
+       document.body.appendChild(animatedImage);
 
-      // Position cloned image near the original
-      const rect = targetElement.getBoundingClientRect();
+       const rect = targetElement.getBoundingClientRect();
       animatedImage.style.position = "absolute";
       animatedImage.style.left = `${rect.left}px`;
       animatedImage.style.top = `${rect.top}px`;
 
-      // Remove cloned image after animation completes
-      setTimeout(() => {
-        addToCart(itemId); // Add item after animation
-        animatedImage.remove(); // Cleanup
+       setTimeout(() => {
+        addToCart(itemId);
+        animatedImage.remove();
       }, 600);
+    } else {
+      addToCart(itemId); // fallback if no animation
     }
   };
 
-  // Handle checkout
-  // Handle checkout
-const handleCheckout = () => {
-  if (calculateSubtotal() === 0) {
-    alert("Your cart is empty. Please add items before proceeding to checkout.");
-    return;
-  }
-  setIsCheckedOut(true); // Proceed to checkout
-};
+  const handleCheckout = () => {
+    if (calculateSubtotal() === 0) {
+      alert("Your cart is empty. Please add items before proceeding to checkout.");
+      return;
+    }
+    setIsCheckedOut(true);
+  };
 
-
-  return (
-    <div className="cartitems" style={{ backgroundImage: `url(${fbg})`, backgroundSize: "cover" }}>
+   return (
+    <div
+      className="cartitems"
+      style={{ backgroundImage: `url(${fbg})`, backgroundSize: "cover" }}
+    >
       <div className="cartitems-format-main">
         <p>Products</p>
         <p>Title</p>
@@ -66,15 +67,29 @@ const handleCheckout = () => {
           return (
             <div key={e.id} className="cartitems-format">
               <div className="cartitems-format-main">
-                <img
-                  src={e.image}
-                  alt=""
-                  className="carticon-product-icon"
-                  onClick={(event) => handleAddToCart(e.id, event)}
-                />
+                <img src={e.image} alt="" className="carticon-product-icon" />
                 <p>{e.name}</p>
                 <p>₱{e.new_price}</p>
-                <p className="cartitems-quantity">{cartItems[e.id]}</p>
+
+                {/* Quantity controls */}
+                <div className="cartitems-quantity-controls">
+                  <button
+                    onClick={() => removeFromCart(e.id)}
+                    className="quantity-btn"
+                    disabled={cartItems[e.id] <= 1}
+                  >
+                    −
+                  </button>
+                  <span className="cartitems-quantity">{cartItems[e.id]}</span>
+
+                  <button
+                    onClick={(event) => handleAddToCart(e.id, event)}
+                    className="quantity-btn"
+                  >
+                    +
+                  </button>
+                </div>
+
                 <p>₱{e.new_price * cartItems[e.id]}</p>
                 <img
                   className="cartitems-remove-icon"
@@ -116,7 +131,7 @@ const handleCheckout = () => {
         </div>
       )}
 
-      {/* Receipt Box after Checkout */}
+      {/* Receipt after checkout */}
       {isCheckedOut && (
         <div className="receipt-box">
           <h2>Your Receipt:</h2>
@@ -125,7 +140,9 @@ const handleCheckout = () => {
               if (cartItems[e.id] > 0) {
                 return (
                   <div key={e.id} className="receipt-item">
-                    <p>{e.name} x{cartItems[e.id]}</p>
+                    <p>
+                      {e.name} x{cartItems[e.id]}
+                    </p>
                     <p>₱{e.new_price} each</p>
                     <p>Total: ₱{e.new_price * cartItems[e.id]}</p>
                   </div>

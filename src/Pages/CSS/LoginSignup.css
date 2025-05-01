@@ -151,4 +151,14 @@
     .loginsignup-agree {
         font-size: 16px;
     }
+    .password-container {
+        position: relative;
+      }
+      
+      .toggle-password {
+        font-size: 20px; /* Adjust the size of the icon */
+        color: #333; /* You can change the color here */
+        cursor: pointer;
+      }
+      
 }

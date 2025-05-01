@@ -1,5 +1,5 @@
 .footer {
-    background: linear-gradient(360deg,#7c0f2a, #720e28,#a32043);
+    background: linear-gradient(360deg,#55071a, #470517,#740e29);
     margin-top: -100px;
     display: flex;
     flex-direction: column;
@@ -7,11 +7,11 @@
     align-items: center;
     gap: 50px;
     padding-top:125px;
-    text-shadow: 2px 2px 5px rgba(252, 248, 251, 0.937); /* Adds depth to the text */
+    text-shadow: 2px 2px 5px rgba(71, 8, 8, 0.937); /* Adds depth to the text */
 }
 .footer:hover{
     
-    background: linear-gradient(90deg, #a10d32, #720e28,#a32043);
+    background: linear-gradient(90deg, #55071a, #470517,#6a031e);
     background-size: 300% 300%;
     animation: gradientMove 6s ease infinite;
     transition: background-color 0.3s ease-in-out;
@@ -30,12 +30,21 @@
     font-family: "maragsa";
     text-decoration: none;
 }
+.footer-heading {
+    color: #f9d3d3;
+    font-weight: bold;
+    font-size: 32px;  /* You can adjust this size as needed */
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
 
 .footer-links {
     display: flex;
     list-style: none;
     gap: 50px;
-    color: var(--pink);
+    color: #f9d3d3;
     font-size: 20px;
 }
 
@@ -51,8 +60,8 @@
 .footer-icons-container {
     padding: 10px;
     padding-bottom: 6px;
-    background: #6c0909;
-    border: 1px solid #8a1515;
+    background: #7f5757;
+    border: 1px solid #7f5757;
 }
 
 .footer-copyright {
@@ -126,4 +135,22 @@
     .footer-copyright {
         font-size: 14px;
     }
-}
+    .footer-video {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100px;
+        gap: 15px;
+        margin-bottom: 30px;
+      }
+      
+      .reel-video {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+
+      }
+     
+          
+      
+    }      

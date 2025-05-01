@@ -9,6 +9,7 @@ export const LoginSignup = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);  // New state to toggle password visibility
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -75,13 +76,28 @@ export const LoginSignup = () => {
             onChange={(e) => setEmail(e.target.value)}
             required
           />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
+          <div className="password-container">
+            <input
+              type={showPassword ? 'text' : 'password'}  // Toggle password visibility
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <span
+              className="toggle-password"
+              onClick={() => setShowPassword(!showPassword)} // Toggle visibility
+              style={{
+                cursor: 'pointer',
+                position: 'absolute',
+                right: '10px',
+                top: '50%',
+                transform: 'translateY(-50%)',
+              }}
+            >
+              {showPassword ? '👁️' : '🙈'} {/* Eye icon for visibility toggle */}
+            </span>
+          </div>
           {!isLogin && (
             <div className="loginsignup-agree">
               <input type="checkbox" required />

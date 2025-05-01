@@ -3,7 +3,6 @@ import "./Navbar.css";
 import color from "../../constants/color.ts"; // Kept TypeScript import
 import cart_icon from "../Assets/cart_icon1.png";
 import { Link } from "react-router-dom";
-import nav_dropdown from "../Assets/nav_dropdown.png";
 import { ShopContext } from "../../Context/ShopContext";
 
 export const Navbar = () => {
