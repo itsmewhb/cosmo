@@ -7,14 +7,23 @@
     align-items: center;
     gap: 50px;
     padding-top:125px;
-    text-shadow: 2px 2px 5px rgba(71, 8, 8, 0.937); /* Adds depth to the text */
+    text-shadow: 2px 2px 5px rgba(71, 8, 8, 0.937);
 }
-.footer:hover{
-    
+
+.footer:hover {
     background: linear-gradient(90deg, #55071a, #470517,#6a031e);
     background-size: 300% 300%;
     animation: gradientMove 6s ease infinite;
     transition: background-color 0.3s ease-in-out;
+}
+
+.footer-heading {
+    color: #f9d3d3;
+    font-weight: bold;
+    font-size: 32px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 .footer-logo {
@@ -30,15 +39,6 @@
     font-family: "maragsa";
     text-decoration: none;
 }
-.footer-heading {
-    color: #f9d3d3;
-    font-weight: bold;
-    font-size: 32px;  /* You can adjust this size as needed */
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 10px;
-  }
-  
 
 .footer-links {
     display: flex;
@@ -80,22 +80,95 @@
     border: none;
     border-radius: 10px;
     height: 3px;
-    background: var(--pink); /* Updated background to primary color */
+    background: var(--pink);
 }
 
-/* Responsive Adjustments */
+/* ========== NEW STYLES FOR VIDEO ========== */
+
+.footer-video {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.video-container {
+    position: relative;
+    width: 317px;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.video-container:hover {
+    transform: scale(1.02);
+}
+
+.video-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    position: relative;
+}
+
+.reel-video {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+}
+
+.video-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(20, 0, 0, 0.6);
+    color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: "Maragsa", sans-serif;
+    font-weight: 500;
+    backdrop-filter: blur(4px);
+}
+
+.product-name {
+    font-size: 16px;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #f9d3d3;
+    margin-top: 5px;
+}
+
+.video-container:hover .video-overlay {
+    background: rgba(255, 205, 210, 0.8);
+    color: #4a0d19;
+}
+
+/* ========== RESPONSIVE STYLES ========== */
+
 @media (max-width: 992px) {
     .footer {
         padding-top: 50px;
         gap: 40px;
     }
+
     .footer-logo p {
         font-size: 30px;
     }
+
     .footer-links {
         gap: 30px;
         font-size: 18px;
     }
+
     .footer-copyright {
         font-size: 18px;
     }
@@ -106,13 +179,16 @@
         padding-top: 40px;
         gap: 30px;
     }
+
     .footer-logo p {
         font-size: 24px;
     }
+
     .footer-links {
         gap: 20px;
         font-size: 16px;
     }
+
     .footer-copyright {
         font-size: 16px;
     }
@@ -120,37 +196,32 @@
 
 @media (max-width: 576px) {
     .footer {
-        padding-top:130px;
+        padding-top: 130px;
         gap: 20px;
     }
+
     .footer-logo p {
         font-size: 20px;
     }
+
     .footer-links {
         gap: 10px;
         font-size: 14px;
-        flex-direction: row; /* Stack links vertically */
+        flex-direction: row;
         align-items: center;
     }
+
     .footer-copyright {
         font-size: 14px;
     }
-    .footer-video {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        width: 100px;
-        gap: 15px;
-        margin-bottom: 30px;
-      }
-      
-      .reel-video {
+
+    .reel-video {
         max-width: 100%;
         height: auto;
         border-radius: 8px;
+    }
 
-      }
-     
-          
-      
-    }      
+    .product-name, .product-price {
+        font-size: 14px;
+    }
+}

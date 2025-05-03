@@ -78,99 +78,12 @@
     height: 58px;
     outline: none;
     border-radius: 50px;
-    background: var(--primary);
+    background: rgb(110, 2, 2);
     color: var(--white);
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
     border: 2px solid var(--black); /* Border around the button */
-}
-
-.cartitems-promocode {
-    flex: 1;
-    font-size: 16px;
-    font-weight: 500;
-}
-
-.cartitems-promocode p {
-    color: var(--white);
-}
-
-.cartitems-promobox {
-    width: 504px;
-    margin-top: 15px;
-    padding-left: 20px;
-    height: 58px;
-    background: #752323;
-    border: 1px solid var(--black); /* Border around the promo box */
-    border-radius: 5px; /* Rounded corners for the promo box */
-}
-
-.cartitems-promobox input {
-    border: none;
-    outline: none;
-    background: transparent;
-    font-size: 16px;
-    width: 330px;
-    height: 50px;
-}
-
-.cartitems-promobox button {
-    width: 170px;
-    height: 58px;
-    font-size: 16px;
-    background: var(--black);
-    color: var(--white);
-    cursor: pointer;
-    border: 1px solid var(--white); /* Light border for promo button */
-}
-
-/* Responsive Adjustments */
-@media (max-width: 992px) {
-    .cartitems {
-        padding: 80px 50px;
-    }
-    .cartitems-format-main {
-        grid-template-columns: 0.5fr 2fr 1fr 1fr;
-        gap: 30px;
-        font-size: 16px;
-        border-bottom: 2px solid var(--black); /* Line after product info */
-    }
-    .cartitems-down {
-        flex-direction: column;
-        margin: 50px 0px;
-    }
-    .cartitems-total {
-        margin-right: 0;
-        gap: 20px;
-        border-top: 2px solid var(--black);
-    }
-    .cartitems-total button {
-        width: 100%;
-    }
-    .cartitems-promobox {
-        width: 100%;
-        margin-top: 15px;
-    }
-}
-
-@media (max-width: 768px) {
-    .cartitems {
-        padding: 60px 30px;
-    }
-    .cartitems-format-main {
-        grid-template-columns: 0.5fr 2fr 1fr;
-        gap: 20px;
-        font-size: 14px;
-        border-bottom: 2px solid var(--black);
-    }
-    .cartitems-total-item {
-        font-size: 14px;
-    }
-    .cartitems-promobox {
-        width: 100%;
-        margin-top: 10px;
-    }
 }
 
 @media (max-width: 576px) {
@@ -302,12 +215,12 @@ button:hover {
   
   .quantity-btn {
     background-color: transparent;
-    border: 1px solid #ccc;
+    border: 1px solid #a91a1a;
     padding: 4px 10px;
     font-size: 18px;
     cursor: pointer;
     border-radius: 4px;
-    color: #333;
+    color: #f6f3f3;
     transition: background-color 0.2s, color 0.2s, border-color 0.2s;
     display: flex;
     align-items: center;

@@ -27,7 +27,7 @@ import p32_img from "./lips8 (2).webp";
 let all_product = [
   {
     id: 1,
-    name: "Midsummer Fairytales Embossed Five- Color Makeup Palette",
+    name: "Little Angel Embossed Highlighter",
     category: "face",
     image: p1_img,
     new_price: 1245.00,
@@ -35,7 +35,7 @@ let all_product = [
   },
   {
     id: 2,
-    name: "Swan Ballet Six-Color Makeup Palette",
+    name: "Swan Ballet Embossed Blush",
     category: "face",
     image: p2_img,
     new_price: 1345.00,
@@ -43,7 +43,7 @@ let all_product = [
   },
   {
     id: 3,
-    name: "Violet Strawberry Rococo Eyeshadow Palette",
+    name: "Strawberry Rococo Embossed Blush",
     category: "face",
     image: p3_img,
     new_price: 1245.00,
@@ -51,7 +51,7 @@ let all_product = [
   },
   {
     id: 4,
-    name: "Little Angel 9-color Eyeshadow Palette",
+    name: "Little Angel Cream Blush",
     category: "face",
     image: p4_img,
     new_price: 1355.00,
@@ -59,7 +59,7 @@ let all_product = [
   },
   {
     id: 5,
-    name: "Midsummer Fairytales Eyebrow Palette",
+    name: "Butterfly Cloud Collar Rouge Box Highlighting & Blush Duo Powder",
     category: "face",
     image: p5_img,
     new_price: 1155.00,
@@ -67,7 +67,7 @@ let all_product = [
   },
   {
     id: 6,
-    name: "Strawberry Cupid Makeup Palette",
+    name: "Violet Strawberry Rococo Embossed Blush",
     category: "face",
     image: p6_img,
     new_price: 1165.00,
@@ -75,7 +75,7 @@ let all_product = [
   },
   {
     id: 7,
-    name: "Butterfly Cloud Collar Liquid Eyeliner $15.00",
+    name: "Strawberry Cupid All Day Glow Liquid Blush",
     category: "face",
     image: p7_img,
     new_price: 1455.00,
@@ -83,7 +83,7 @@ let all_product = [
   },
   {
     id: 8,
-    name: "Butterfly Cloud Collar Embossed Six-Color Makeup Palette",
+    name: "Chocolate Wonder-Shop Highlighter & Contour",
     category: "face",
     image: p8_img,
     new_price: 1465.00,
@@ -92,7 +92,7 @@ let all_product = [
   
   {
     id: 13,
-    name: "Little Angel Embossed Highlighter",
+    name: "Midsummer Fairytales Embossed Five- Color Makeup Palette",
     category: "eyes",
     image: p13_img,
     new_price: 1555.00,
@@ -100,7 +100,7 @@ let all_product = [
   },
   {
     id: 14,
-    name: "Swan Ballet Embossed Blush",
+    name: "Swan Ballet Six-Color Makeup Palette",
     category: "eyes",
     image: p14_img,
     new_price: 1255.00,
@@ -108,7 +108,7 @@ let all_product = [
   },
   {
     id: 15,
-    name: "Strawberry Rococo Embossed Blush",
+    name: "Violet Strawberry Rococo Eyeshadow Palette",
     category: "eyes",
     image: p15_img,
     new_price: 1355.00,
@@ -116,7 +116,7 @@ let all_product = [
   },
   {
     id: 16,
-    name: "Little Angel Cream Blush",
+    name: "Little Angel 9-color Eyeshadow Palette",
     category: "eyes",
     image: p16_img,
     new_price:  1125.00,
@@ -124,7 +124,7 @@ let all_product = [
   },
   {
     id: 17,
-    name: "Butterfly Cloud Collar Rouge Box Highlighting & Blush Duo Powder",
+    name: "Midsummer Fairytales Eyebrow Palette",
     category: "eyes",
     image: p17_img,
     new_price:  1455.00,
@@ -132,7 +132,7 @@ let all_product = [
   },
   {
     id: 18,
-    name: "Strawberry Cupid All day Glow Liquid Blush",
+    name: "Butterfly Cloud Collar Liquid Eyeliner",
     category: "eyes",
     image: p18_img,
     new_price: 1255.00,
@@ -140,7 +140,7 @@ let all_product = [
   },
   {
     id: 19,
-    name: "Chocolate Wonder-Shop Highlighter & Contour",
+    name: "Butterfly Cloud Collar Embossed Six-Color Makeup Palette",
     category: "eyes",
     image: p19_img,
     new_price: 1355.00,
@@ -148,7 +148,7 @@ let all_product = [
   },
   {
     id: 20,
-    name: "Violet Strawberry Rococo Embossed Blush",
+    name: "Butterfly Cloud Collar Mascara",
     category: "eyes",
     image: p20_img,
     new_price: 1125.00,

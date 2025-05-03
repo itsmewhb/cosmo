@@ -12,7 +12,7 @@
 }
 
 .shop-category {
-    background: linear-gradient(90deg, var(--brown), var(--secondary), var(--accent));
+    background: linear-gradient(90deg, #55071a, #680520,#740e29);
     background-size: 300% 300%;
     animation: gradientMove 6s ease-in-out infinite, pulse 3s linear infinite;
     transition: background-color 0.3s ease-in-out;
