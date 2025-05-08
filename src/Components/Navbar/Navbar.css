@@ -211,6 +211,36 @@
     width: 100%;
 }
 
+/* Logout button style */
+.nav-logout-btn {
+    width: 150px;
+    height: 50px;
+    border: 1px solid #5a0519;
+    background-color: #4a0819;
+    box-shadow: 0 0 5px var(--primary);
+    border-radius: 50px;
+    color: var(--white);
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "Roboto";
+    background: #5f041a;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1);
+    text-shadow: 2px 2px 5px rgba(15, 6, 6, 0.7);
+}
+
+.nav-logout-btn:hover {
+    border: 1px solid #3e0010;
+    box-shadow: 0 0 5px var(--primary);
+    background-color: #510417;
+    transform: scale(1.1);
+}
+
+.nav-logout-btn:active {
+    background: var(--white);
+}
+
 /* Media queries for responsiveness */
 @media (max-width: 1024px) {
     .navbar {

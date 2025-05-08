@@ -14,17 +14,17 @@
     font-weight: 600;
     width: 171px;
     height: 70px;
-    border: 1px solid var(--accent);
+    border: 1px #360303;
 }
 
 .descriptionbox-description {
     display: flex;
     flex-direction: column;
     gap: 25px;
-    border: 1px solid #930606;
+    border: 1px solid #3d0303;
     padding: 48px;
     padding-bottom: 70px;
-    color: #7a1414; /* Example font color */
+    color: #3b0303; /* Example font color */
 }
 
 /* Responsive Adjustments */

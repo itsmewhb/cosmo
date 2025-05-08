@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import "./CartItems.css";
 import { ShopContext } from "../../Context/ShopContext";
 import remove_icon from "../Assets/remove_icon1.png";
-import fbg from "../Assets/fbg.webp";
+import fbg from "../Assets/newcartbackground.png";
 
 const CartItems = () => {
   const {
@@ -14,29 +14,95 @@ const CartItems = () => {
     calculateSubtotal,
   } = useContext(ShopContext);
 
-   const [isCheckedOut, setIsCheckedOut] = useState(false);
+  const [isCheckedOut, setIsCheckedOut] = useState(false);
+  const [orderComplete, setOrderComplete] = useState(false);
+  const [formData, setFormData] = useState({
+    Name: "",
+    Email: "",
+    Address: "",
+    Region: "",
+    Province: "",
+    City: "",
+    Barangay: "",
+    PostalCode: "",
+    Payment: "COD",
+  });
 
-  // Add to cart with animation
+  const regionsAndProvinces = {
+    NCR: {
+      "Metro Manila": {
+        cities: [
+          { name: "Taguig", barangays: ["Upper Bicutan", "Central Bicutan", "Lower Bicutan"] },
+          { name: "Pasay", barangays: ["Barangay 78", "Barangay 85", "Barangay 77"] },
+          { name: "Makati", barangays: ["San Lorenzo", "Olympia", "Magallanes"] },
+        ],
+      },
+    },
+    "Region 1": {
+      "Ilocos Norte": {
+        cities: [
+          { name: "Laoag", barangays: ["San Agustin", "San Guillermo"] },
+          { name: "Batac", barangays: ["Ricarte", "Caunayan"] },
+        ],
+      },
+      "Ilocos Sur": {
+        cities: [
+          { name: "Vigan", barangays: ["Ayusan Norte", "Ayusan Sur"] },
+          { name: "Candon", barangays: ["Bagani", "Amguid"] },
+        ],
+      },
+    },
+    "Region 2": {
+      "Cagayan": {
+        cities: [
+          { name: "Tuguegarao", barangays: ["Leonarda", "Linao East"] },
+          { name: "Cauayan", barangays: ["Ugac Norte", "Tanza"] },
+        ],
+      },
+      "Isabela": {
+        cities: [
+          { name: "Ilagan", barangays: ["Baligtasan", "Pilar"] },
+          { name: "Cordon", barangays: ["Calamagui", "Fugu"] },
+        ],
+      },
+    },
+    "Region 3": {
+      "Pampanga": {
+        cities: [
+          { name: "San Fernando", barangays: ["Bulaon", "Del Pilar"] },
+          { name: "Angeles", barangays: ["Mexico", "Agapito"] },
+        ],
+      },
+      "Bulacan": {
+        cities: [
+          { name: "Malolos", barangays: ["Anilao", "Atlag"] },
+          { name: "Meycauayan", barangays: ["Pajo", "Pandayan"] },
+        ],
+      },
+    },
+  };
+  
+  const regions = Object.keys(regionsAndProvinces);
+
   const handleAddToCart = (itemId, event) => {
     const targetElement = event?.target?.closest(".carticon-product-icon");
 
-     if (targetElement) {
+    if (targetElement) {
       const animatedImage = targetElement.cloneNode(true);
       animatedImage.classList.add("throw-animation");
+      document.body.appendChild(animatedImage);
 
-       document.body.appendChild(animatedImage);
-
-       const rect = targetElement.getBoundingClientRect();
+      const rect = targetElement.getBoundingClientRect();
       animatedImage.style.position = "absolute";
       animatedImage.style.left = `${rect.left}px`;
       animatedImage.style.top = `${rect.top}px`;
 
-       setTimeout(() => {
+      setTimeout(() => {
         addToCart(itemId);
         animatedImage.remove();
       }, 600);
     } else {
-      addToCart(itemId); // fallback if no animation
+      addToCart(itemId);
     }
   };
 
@@ -48,7 +114,31 @@ const CartItems = () => {
     setIsCheckedOut(true);
   };
 
-   return (
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    setOrderComplete(true);
+  };
+
+  const handleRegionChange = (e) => {
+    const selectedRegion = e.target.value;
+    setFormData({ ...formData, region: selectedRegion, province: "", city: "", barangay: "" });
+  };
+
+  const handleProvinceChange = (e) => {
+    const selectedProvince = e.target.value;
+    setFormData({ ...formData, province: selectedProvince, city: "", barangay: "" });
+  };
+
+  const handleCityChange = (e) => {
+    const selectedCity = e.target.value;
+    setFormData({ ...formData, city: selectedCity, barangay: "" });
+  };
+
+  const handleBarangayChange = (e) => {
+    setFormData({ ...formData, barangay: e.target.value });
+  };
+
+  return (
     <div
       className="cartitems"
       style={{ backgroundImage: `url(${fbg})`, backgroundSize: "cover" }}
@@ -62,6 +152,7 @@ const CartItems = () => {
         <p>Remove</p>
       </div>
       <hr />
+
       {all_product.map((e) => {
         if (cartItems[e.id] > 0) {
           return (
@@ -71,7 +162,6 @@ const CartItems = () => {
                 <p>{e.name}</p>
                 <p>₱{e.new_price}</p>
 
-                {/* Quantity controls */}
                 <div className="cartitems-quantity-controls">
                   <button
                     onClick={() => removeFromCart(e.id)}
@@ -81,7 +171,6 @@ const CartItems = () => {
                     −
                   </button>
                   <span className="cartitems-quantity">{cartItems[e.id]}</span>
-
                   <button
                     onClick={(event) => handleAddToCart(e.id, event)}
                     className="quantity-btn"
@@ -105,7 +194,6 @@ const CartItems = () => {
         return null;
       })}
 
-      {/* Cart totals section */}
       {!isCheckedOut && (
         <div className="cartitems-down">
           <div className="cartitems-total">
@@ -131,18 +219,153 @@ const CartItems = () => {
         </div>
       )}
 
-      {/* Receipt after checkout */}
-      {isCheckedOut && (
+      {isCheckedOut && !orderComplete && (
+        <div className="checkout-form-container">
+          <h2>Checkout Details</h2>
+          <form className="checkout-form" onSubmit={handleFormSubmit}>
+            <label>
+              Full Name:
+              <input
+                type="text"
+                required
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              />
+            </label>
+            <label>
+              Email Address:
+              <input
+                type="email"
+                required
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              />
+            </label>
+            <label>
+              Street:
+              <textarea
+                required
+                value={formData.address}
+                onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+              />
+            </label>
+
+            <label>
+              Region:
+              <select value={formData.region} onChange={handleRegionChange}>
+                <option value="">Select Region</option>
+                {regions.map((region) => (
+                  <option key={region} value={region}>
+                    {region}
+                  </option>
+                ))}
+              </select>
+            </label>
+
+            {formData.region && (
+              <label>
+                Province:
+                <select value={formData.province} onChange={handleProvinceChange}>
+                  <option value="">Select Province</option>
+                  {Object.keys(regionsAndProvinces[formData.region]).map((province) => (
+                    <option key={province} value={province}>
+                      {province}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            )}
+
+            {formData.province && (
+              <label>
+                City:
+                <select value={formData.city} onChange={handleCityChange}>
+                  <option value="">Select City</option>
+                  {regionsAndProvinces[formData.region][formData.province].cities.map((city) => (
+                    <option key={city.name} value={city.name}>
+                      {city.name}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            )}
+
+            {formData.city && (
+              <label>
+                Barangay:
+                <select value={formData.barangay} onChange={handleBarangayChange}>
+                  <option value="">Select Barangay</option>
+                  {regionsAndProvinces[formData.region][formData.province].cities
+                    .find((city) => city.name === formData.city)
+                    ?.barangays.map((barangay) => (
+                      <option key={barangay} value={barangay}>
+                        {barangay}
+                      </option>
+                    ))}
+                </select>
+              </label>
+            )}
+
+<label>
+  Postal Code:
+  <input
+    type="text"
+    inputMode="numeric"
+    pattern="\d*"
+    required
+    value={formData.postalCode}
+    onChange={(e) => {
+      const value = e.target.value;
+      if (/^\d*$/.test(value)) {
+        setFormData({ ...formData, postalCode: value });
+      }
+    }}
+    onKeyPress={(e) => {
+      // Allow only numeric input
+      if (!/[0-9]/.test(e.key)) {
+        e.preventDefault();
+      }
+    }}
+  />
+</label>
+
+
+
+            <label>
+              Payment Method:
+              <select
+                value={formData.payment}
+                onChange={(e) => setFormData({ ...formData, payment: e.target.value })}
+              >
+                <option value="cod">Cash on Delivery</option>
+                <option value="gcash">GCash</option>
+              </select>
+            </label>
+            <button type="submit">Confirm Order</button>
+          </form>
+        </div>
+      )}
+
+      {orderComplete && (
         <div className="receipt-box">
+          <h2>Order Summary</h2>
+          <p><strong>Name:</strong> {formData.name}</p>
+          <p><strong>Email:</strong> {formData.email}</p>
+          <p><strong>Address:</strong> {formData.address}</p>
+          <p><strong>Region:</strong> {formData.region}</p>
+          <p><strong>Province:</strong> {formData.province}</p>
+          <p><strong>City:</strong> {formData.city}</p>
+          <p><strong>Barangay:</strong> {formData.barangay}</p>
+          <p><strong>Postal Code:</strong> {formData.postalCode}</p>
+          <p><strong>Payment Method:</strong> {formData.payment}</p>
+
           <h2>Your Receipt:</h2>
           <div className="receipt-details">
             {all_product.map((e) => {
               if (cartItems[e.id] > 0) {
                 return (
                   <div key={e.id} className="receipt-item">
-                    <p>
-                      {e.name} x{cartItems[e.id]}
-                    </p>
+                    <p>{e.name} x{cartItems[e.id]}</p>
                     <p>₱{e.new_price} each</p>
                     <p>Total: ₱{e.new_price * cartItems[e.id]}</p>
                   </div>
