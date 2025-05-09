@@ -32,6 +32,11 @@ const ShopContextProvider = (props) => {
     }));
   };
 
+  // Clear all items in the cart
+  const clearCart = () => {
+    setCartItems(getDefaultCart()); // Reset cart to default state (all quantities set to 0)
+  };
+
   // Calculate the total quantity of items in the cart
   const getTotalCartQuantity = () => {
     return Object.values(cartItems).reduce((acc, quantity) => acc + quantity, 0);
@@ -46,12 +51,13 @@ const ShopContextProvider = (props) => {
 
   // Values to provide to the context consumers
   const contextValue = {
-    all_product, // List of all available products
-    cartItems,   // Cart state
-    addToCart,   // Function to add items to the cart
-    removeFromCart, // Function to remove items from the cart
+    all_product,        // List of all available products
+    cartItems,          // Cart state
+    addToCart,          // Function to add items to the cart
+    removeFromCart,     // Function to remove items from the cart
+    clearCart,          // Function to clear the cart
     getTotalCartQuantity, // Function to get the total quantity of items in the cart
-    calculateSubtotal  // Function to calculate the subtotal of the cart
+    calculateSubtotal   // Function to calculate the subtotal of the cart
   };
 
   return (

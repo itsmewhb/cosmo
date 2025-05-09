@@ -10,22 +10,23 @@ const CartItems = () => {
     cartItems,
     addToCart,
     removeFromCart,
-    getTotalCartQuantity,
     calculateSubtotal,
   } = useContext(ShopContext);
 
   const [isCheckedOut, setIsCheckedOut] = useState(false);
   const [orderComplete, setOrderComplete] = useState(false);
   const [formData, setFormData] = useState({
-    Name: "",
-    Email: "",
-    Address: "",
-    Region: "",
-    Province: "",
-    City: "",
-    Barangay: "",
-    PostalCode: "",
-    Payment: "COD",
+    username: "",
+    password: "",
+    name: "",
+    email: "",
+    address: "",
+    region: "",
+    province: "",
+    city: "",
+    barangay: "",
+    postalCode: "",
+    payment: "COD",
   });
 
   const regionsAndProvinces = {
@@ -81,12 +82,11 @@ const CartItems = () => {
       },
     },
   };
-  
+
   const regions = Object.keys(regionsAndProvinces);
 
   const handleAddToCart = (itemId, event) => {
     const targetElement = event?.target?.closest(".carticon-product-icon");
-
     if (targetElement) {
       const animatedImage = targetElement.cloneNode(true);
       animatedImage.classList.add("throw-animation");
@@ -139,10 +139,7 @@ const CartItems = () => {
   };
 
   return (
-    <div
-      className="cartitems"
-      style={{ backgroundImage: `url(${fbg})`, backgroundSize: "cover" }}
-    >
+    <div className="cartitems" style={{ backgroundImage: `url(${fbg})`, backgroundSize: "cover" }}>
       <div className="cartitems-format-main">
         <p>Products</p>
         <p>Title</p>
@@ -161,31 +158,15 @@ const CartItems = () => {
                 <img src={e.image} alt="" className="carticon-product-icon" />
                 <p>{e.name}</p>
                 <p>₱{e.new_price}</p>
-
                 <div className="cartitems-quantity-controls">
-                  <button
-                    onClick={() => removeFromCart(e.id)}
-                    className="quantity-btn"
-                    disabled={cartItems[e.id] <= 1}
-                  >
+                  <button onClick={() => removeFromCart(e.id)} className="quantity-btn" disabled={cartItems[e.id] <= 1}>
                     −
                   </button>
                   <span className="cartitems-quantity">{cartItems[e.id]}</span>
-                  <button
-                    onClick={(event) => handleAddToCart(e.id, event)}
-                    className="quantity-btn"
-                  >
-                    +
-                  </button>
+                  <button onClick={(event) => handleAddToCart(e.id, event)} className="quantity-btn">+</button>
                 </div>
-
                 <p>₱{e.new_price * cartItems[e.id]}</p>
-                <img
-                  className="cartitems-remove-icon"
-                  src={remove_icon}
-                  onClick={() => removeFromCart(e.id)}
-                  alt="Remove"
-                />
+                <img className="cartitems-remove-icon" src={remove_icon} onClick={() => removeFromCart(e.id)} alt="Remove" />
               </div>
               <hr />
             </div>
@@ -223,6 +204,7 @@ const CartItems = () => {
         <div className="checkout-form-container">
           <h2>Checkout Details</h2>
           <form className="checkout-form" onSubmit={handleFormSubmit}>
+          
             <label>
               Full Name:
               <input
@@ -249,47 +231,37 @@ const CartItems = () => {
                 onChange={(e) => setFormData({ ...formData, address: e.target.value })}
               />
             </label>
-
             <label>
               Region:
               <select value={formData.region} onChange={handleRegionChange}>
                 <option value="">Select Region</option>
                 {regions.map((region) => (
-                  <option key={region} value={region}>
-                    {region}
-                  </option>
+                  <option key={region} value={region}>{region}</option>
                 ))}
               </select>
             </label>
-
             {formData.region && (
               <label>
                 Province:
                 <select value={formData.province} onChange={handleProvinceChange}>
                   <option value="">Select Province</option>
                   {Object.keys(regionsAndProvinces[formData.region]).map((province) => (
-                    <option key={province} value={province}>
-                      {province}
-                    </option>
+                    <option key={province} value={province}>{province}</option>
                   ))}
                 </select>
               </label>
             )}
-
             {formData.province && (
               <label>
                 City:
                 <select value={formData.city} onChange={handleCityChange}>
                   <option value="">Select City</option>
                   {regionsAndProvinces[formData.region][formData.province].cities.map((city) => (
-                    <option key={city.name} value={city.name}>
-                      {city.name}
-                    </option>
+                    <option key={city.name} value={city.name}>{city.name}</option>
                   ))}
                 </select>
               </label>
             )}
-
             {formData.city && (
               <label>
                 Barangay:
@@ -298,47 +270,38 @@ const CartItems = () => {
                   {regionsAndProvinces[formData.region][formData.province].cities
                     .find((city) => city.name === formData.city)
                     ?.barangays.map((barangay) => (
-                      <option key={barangay} value={barangay}>
-                        {barangay}
-                      </option>
+                      <option key={barangay} value={barangay}>{barangay}</option>
                     ))}
                 </select>
               </label>
             )}
-
-<label>
-  Postal Code:
-  <input
-    type="text"
-    inputMode="numeric"
-    pattern="\d*"
-    required
-    value={formData.postalCode}
-    onChange={(e) => {
-      const value = e.target.value;
-      if (/^\d*$/.test(value)) {
-        setFormData({ ...formData, postalCode: value });
-      }
-    }}
-    onKeyPress={(e) => {
-      // Allow only numeric input
-      if (!/[0-9]/.test(e.key)) {
-        e.preventDefault();
-      }
-    }}
-  />
-</label>
-
-
-
+            <label>
+              Postal Code:
+              <input
+                type="text"
+                inputMode="numeric"
+                maxLength="4"
+                pattern="\d{4}"
+                required
+                value={formData.postalCode}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  if (/^\d{0,4}$/.test(value)) {
+                    setFormData({ ...formData, postalCode: value });
+                  }
+                }}
+                onKeyPress={(e) => {
+                  if (!/[0-9]/.test(e.key)) {
+                    e.preventDefault();
+                  }
+                }}
+              />
+            </label>
             <label>
               Payment Method:
-              <select
-                value={formData.payment}
-                onChange={(e) => setFormData({ ...formData, payment: e.target.value })}
-              >
-                <option value="cod">Cash on Delivery</option>
-                <option value="gcash">GCash</option>
+              <select value={formData.payment} onChange={(e) => setFormData({ ...formData, payment: e.target.value })}>
+                <option value="COD">Cash on Delivery</option>
+                <option value="GCash">GCash</option>
               </select>
             </label>
             <button type="submit">Confirm Order</button>
@@ -358,7 +321,6 @@ const CartItems = () => {
           <p><strong>Barangay:</strong> {formData.barangay}</p>
           <p><strong>Postal Code:</strong> {formData.postalCode}</p>
           <p><strong>Payment Method:</strong> {formData.payment}</p>
-
           <h2>Your Receipt:</h2>
           <div className="receipt-details">
             {all_product.map((e) => {

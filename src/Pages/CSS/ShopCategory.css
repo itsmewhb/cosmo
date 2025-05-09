@@ -40,7 +40,7 @@
 .shopcategory-sort {
     padding: 10px 20px;
     border-radius: 40px;
-    border: 1px solid var(--white);
+    border: 1px solid #ffffff;
 }
 
 .shopcategory-indexSort p span {
@@ -65,7 +65,7 @@
     height: 69px;
     border-radius: 75px;
     background: var(--secondary );
-    color: var(--white);
+    color: #ffffff;
     font-size: 22px;
     font-weight: 500;
     animation: bounce 1.5s ease-in-out infinite;

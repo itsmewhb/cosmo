@@ -12,8 +12,8 @@ export const LoginSignup = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [agreed, setAgreed] = useState(false); // For terms checkbox
-  const [showTerms, setShowTerms] = useState(false); // For showing modal
+  const [agreed, setAgreed] = useState(false); 
+  const [showTerms, setShowTerms] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -130,42 +130,16 @@ export const LoginSignup = () => {
       </div>
 
       {showTerms && (
-        <div
-          className="terms-modal"
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            backgroundColor: 'rgba(0,0,0,0.5)',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            zIndex: 1000,
-          }}
-        >
-          <div
-            className="terms-content"
-            style={{
-              backgroundColor: '#fff',
-              padding: '20px',
-              borderRadius: '8px',
-              maxWidth: '500px',
-              width: '90%',
-              boxShadow: '0 0 10px rgba(0,0,0,0.3)',
-              textAlign: 'left',
-              color: '#000'
-            }}
-          >
+        <div className="terms-modal">
+          <div className="terms-content">
             <h2>Terms & Conditions - FlowerKnows Makeup</h2>
             <p>By creating an account or using our services, you agree to the following:</p>
-            <ul style={{ paddingLeft: '20px' }}>
+            <ul>
               <li>All content, images, and branding of FlowerKnows are protected and may not be reused without permission.</li>
               <li>Returns and refunds are subject to our return policy. Products must be unopened and returned within 7 days.</li>
               <li>We collect user data (email, login details) solely for authentication and do not share with third parties.</li>
             </ul>
-            <button onClick={() => setShowTerms(false)} style={{ marginTop: '15px', padding: '6px 12px', backgroundColor: 'pink' }}>
+            <button onClick={() => setShowTerms(false)}>
               Close
             </button>
           </div>

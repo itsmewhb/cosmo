@@ -107,11 +107,6 @@
     width: 100%;
 }
 
-/* Hover effect for shop, menu, women, and kids links */
-.navshop:hover, .navmen:hover, .navwomen:hover, .navkid:hover {
-    transform: scale(1.2);
-}
-
 /* Horizontal line style */
 .nav-menu hr {
     border: none;
@@ -153,8 +148,14 @@
     transform: scale(1.1);
 }
 
-.nav-login-cart img:hover, .nav-cart-count:hover {
-    transform: scale(1.3);
+.nav-login-cart button:active {
+    background: var(--white);
+}
+
+/* Cart Icon and Quantity Bubble */
+.nav-cart {
+    position: relative;
+    cursor: pointer; /* Ensure the cart container is clickable */
 }
 
 .nav-login-cart img {
@@ -163,132 +164,26 @@
     transition: transform 0.3s ease-in-out;
 }
 
-.nav-login-cart button:active {
-    background: var(--white);
-}
-
 .nav-cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
     width: 22px;
     height: 22px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -35px;
-    margin-left: -45px;
-    border-radius: 11px;
+    border-radius: 50%;
     font-size: 14px;
     background: #700a24;
     color: var(--white);
+    transition: transform 0.3s ease-in-out;
+    z-index: 10; /* Make sure it's above other elements */
 }
 
-/* About Us button styling */
-.nav-about-us {
-    font-size: 18px;
-    font-weight: 600;
-    cursor: pointer;
-    position: relative;
-    transition: color 0.3s ease-in-out;
-    color: maroon;
-    text-shadow: 2px 2px 5px rgba(114, 4, 4, 0.7);
-}
-
-.nav-about-us::after {
-    content: "";
-    width: 0;
-    height: 2px;
-    background: #490113;
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    transition: width 0.5s ease-in-out;
-}
-
-.nav-about-us:hover {
-    color: var(--primary);
-}
-
-.nav-about-us:hover::after {
-    width: 100%;
-}
-
-/* Logout button style */
-.nav-logout-btn {
-    width: 150px;
-    height: 50px;
-    border: 1px solid #5a0519;
-    background-color: #4a0819;
-    box-shadow: 0 0 5px var(--primary);
-    border-radius: 50px;
-    color: var(--white);
-    font-size: 18px;
-    font-weight: bold;
-    font-family: "Roboto";
-    background: #5f041a;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    transform: scale(1);
-    text-shadow: 2px 2px 5px rgba(15, 6, 6, 0.7);
-}
-
-.nav-logout-btn:hover {
-    border: 1px solid #3e0010;
-    box-shadow: 0 0 5px var(--primary);
-    background-color: #510417;
-    transform: scale(1.1);
-}
-
-.nav-logout-btn:active {
-    background: var(--white);
-}
-
-/* Media queries for responsiveness */
-@media (max-width: 1024px) {
-    .navbar {
-        padding: 15px 40px;
-    }
-
-    .nav-menu {
-        gap: 20px;
-    }
-
-    .nav-logo span {
-        font-size: 24px;
-    }
-
-    .nav-login-cart {
-        gap: 30px;
-    }
-}
-
-@media (max-width: 768px) {
-    .navbar {
-        justify-content: center;
-        padding: 15px 20px;
-        flex-direction: row;
-        align-items: center;
-        gap: 15px;
-    }
-
-    .nav-menu {
-        flex-direction: row;
-        margin-top: 10px;
-        gap: 15px;
-        align-items: flex-start;
-        font-size: 18px;
-    }
-
-    .nav-logo span {
-        font-size: 22px;
-    }
-
-    .nav-login-cart {
-        gap: 20px;
-        margin-top: 20px;
-    }
-
-    .nav-menu li {
-        font-size: 16px;
-    }
+/* Hover effects */
+.nav-login-cart img:hover, .nav-cart-count:hover {
+    transform: scale(1.3);
 }
 
 /* Responsive Design for 480px or smaller */
@@ -317,11 +212,6 @@
         font-size: 10px;
     }
 
-    .navlogo-menu {
-        display: flex;
-        flex-direction: column;
-    }
-
     .nav-login-cart {
         align-items: center;
         flex-direction: row;
@@ -331,26 +221,19 @@
         color: #510417;
     }
 
-    .nav-menu li {
-        font-size: 12px; /* Adjust font size for mobile */
-    }
-
-    .nav-login-cart button {
-        width: 100px; /* Adjust button width */
-        height: 35px;
-        font-size: 12px;
-        columns: #510417;
-    }
-
-    .nav-login-cart img {
-        height: 45px;
-        width: 35px;
-    }
-
     .nav-cart-count {
-        margin-left: -35px;
-        width: 18px;
-        height: 18px;
-        font-size: 10px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 22px;
+        height: 22px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        font-size: 14px;
+        background: #700a24;
+        color: var(--white);
+        transition: transform 0.3s ease-in-out;
     }
 }

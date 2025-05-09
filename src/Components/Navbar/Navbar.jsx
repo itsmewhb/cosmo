@@ -10,14 +10,23 @@ export const Navbar = () => {
   const [menu, setMenu] = useState("shop");
   const menuRef = useRef();
   const { getTotalCartQuantity } = useContext(ShopContext); // Access getTotalCartQuantity from ShopContext
-  const { isLoggedIn, setIsLoggedIn } = useContext(AuthContext);
-
+  const { isLoggedIn, logout } = useContext(AuthContext); // Use logout function from AuthContext
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.removeItem("isLoggedIn");
-    setIsLoggedIn(false);
-    navigate("/login");
+    logout();  // Use logout to update authentication state
+    navigate("/login");  // Redirect to login page after logout
+  };
+
+  const handleCartClick = () => {
+    if (!isLoggedIn) {
+      // If not logged in, show an alert or redirect to login page
+      alert("You need to sign up first.");
+      navigate("/login");  // Redirect to login page
+    } else {
+      // If logged in, go to cart page
+      navigate("/cart");
+    }
   };
 
   return (
@@ -51,6 +60,7 @@ export const Navbar = () => {
           {menu === "collections" ? <hr /> : null}
         </li>
       </ul>
+
       <div className="nav-login-cart">
         {isLoggedIn ? (
           <button onClick={handleLogout} className="nav-logout-btn">
@@ -61,10 +71,12 @@ export const Navbar = () => {
             <button className="nav-signup-btn">SIGN UP</button>
           </Link>
         )}
-        <Link to="/cart">
+
+        {/* Cart Icon Wrapper */}
+        <div className="nav-cart" onClick={handleCartClick}>
           <img src={cart_icon} alt="Cart Icon" />
-        </Link>
-        <div className="nav-cart-count">{getTotalCartQuantity()}</div> {/* Show cart quantity */}
+          <div className="nav-cart-count">{getTotalCartQuantity()}</div> {/* Show cart quantity */}
+        </div>
       </div>
     </div>
   );

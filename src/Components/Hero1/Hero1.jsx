@@ -30,7 +30,6 @@ export const Hero1 = () => {
               Your browser does not support the video tag.
             </video>
           </h1>
-          <h2></h2>
         </div>
         <div>
           <div className="hero1-text">
