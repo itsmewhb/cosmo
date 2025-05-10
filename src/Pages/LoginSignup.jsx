@@ -8,12 +8,14 @@ export const LoginSignup = () => {
   const navigate = useNavigate();
   const { login } = useContext(AuthContext);
 
-  const [isLogin, setIsLogin] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);  // Default is Login
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');  // For forgot password
   const [agreed, setAgreed] = useState(false); 
   const [showTerms, setShowTerms] = useState(false);
+  const [isForgotPassword, setIsForgotPassword] = useState(false);  // To toggle forgot password form
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -52,6 +54,23 @@ export const LoginSignup = () => {
     setAgreed(false);
   };
 
+  const handleForgotPassword = (e) => {
+    e.preventDefault();
+
+    const storedUser = JSON.parse(localStorage.getItem(email));
+    if (storedUser) {
+      storedUser.password = newPassword; // Reset the password
+      localStorage.setItem(email, JSON.stringify(storedUser));  // Save the new password
+      alert('Password has been reset successfully!');
+      setIsForgotPassword(false);  // Close the forgot password form
+    } else {
+      alert('No account found with this email.');
+    }
+
+    setEmail('');
+    setNewPassword('');
+  };
+
   return (
     <div
       className="loginsignup"
@@ -68,58 +87,91 @@ export const LoginSignup = () => {
     >
       <div className="loginsignup-container">
         <h1>{isLogin ? 'Login' : 'Sign Up'}</h1>
-        <form className="loginsignup-fields" onSubmit={handleSubmit}>
-          {!isLogin && (
+        {isForgotPassword ? (
+          // Forgot Password Form
+          <form className="loginsignup-fields" onSubmit={handleForgotPassword}>
             <input
-              type="text"
-              placeholder="Username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
-          )}
-          <input
-            type="email"
-            placeholder="Email Address"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-
-          {!isLogin && (
-            <div className="loginsignup-agree">
+            <input
+              type="password"
+              placeholder="New Password"
+              value={newPassword}
+              onChange={(e) => setNewPassword(e.target.value)}
+              required
+            />
+            <button type="submit">Reset Password</button>
+            <span onClick={() => setIsForgotPassword(false)} style={{ cursor: 'pointer', color: 'blue' }}>
+              Back to Login
+            </span>
+          </form>
+        ) : (
+          // Login / Sign Up Form
+          <form className="loginsignup-fields" onSubmit={handleSubmit}>
+            {!isLogin && (
               <input
-                type="checkbox"
-                checked={agreed}
-                onChange={() => setAgreed(!agreed)}
+                type="text"
+                placeholder="Username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
               />
-              <label>
-                I agree to the{' '}
-                <span style={{ color: 'blue', cursor: 'pointer' }} onClick={() => setShowTerms(true)}>
-                  Terms and Conditions
-                </span>
-              </label>
-            </div>
-          )}
+            )}
+            <input
+              type="email"
+              placeholder="Email Address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
 
-          <button type="submit">
-            {isLogin ? 'Login' : 'Create Account'}
-          </button>
-        </form>
+            {!isLogin && (
+              <div className="loginsignup-agree">
+                <input
+                  type="checkbox"
+                  checked={agreed}
+                  onChange={() => setAgreed(!agreed)}
+                />
+                <label>
+                  I agree to the{' '}
+                  <span style={{ color: 'blue', cursor: 'pointer' }} onClick={() => setShowTerms(true)}>
+                    Terms and Conditions
+                  </span>
+                </label>
+              </div>
+            )}
+
+            <button type="submit">
+              {isLogin ? 'Login' : 'Create Account'}
+            </button>
+          </form>
+        )}
 
         <div className="loginsignup-login">
           {isLogin ? (
-            <p>
-              Don't have an account?{' '}
-              <span onClick={() => setIsLogin(false)}>Sign Up</span>
-            </p>
+            <>
+              <p>
+                Don't have an account?{' '}
+                <span onClick={() => setIsLogin(false)}>Sign Up</span>
+              </p>
+              <p>
+                Forgot Password?{' '}
+                <span onClick={() => setIsForgotPassword(true)} style={{ cursor: 'pointer' }}>
+                  Reset it
+                </span>
+              </p>
+            </>
           ) : (
             <p>
               Already have an account?{' '}
